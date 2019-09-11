@@ -49,5 +49,19 @@ RSpec.describe RelatonOgc do
         end.to output(%r{WARNING: no match found online for OGC 19-025r1 year 2018}).to_stderr
       end
     end
+
+    it "ignore CC types" do
+      VCR.use_cassette "data" do
+        result = RelatonOgc::OgcBibliography.get "12-128r14", nil, {}
+        expect(result.doctype).to eq "implementation-standard"
+      end
+    end
+
+    it "returns last date" do
+      VCR.use_cassette "data" do
+        result = RelatonOgc::OgcBibliography.get "16-079", nil, {}
+        expect(result.doctype).to eq "implementation-standard"
+      end
+    end
   end
 end

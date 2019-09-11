@@ -11,11 +11,14 @@ module RelatonOgc
     # @param ref [Strig]
     # @param year [String]
     # @param opts [Hash]
-    def initialize(ref, year = nil, opts = {})
+    def initialize(ref, year = nil, _opts = {})
       @text = ref
       @year = year
       @fetched = false
-      concat from_json(ref)
+      hits = from_json(ref).sort_by do |hit|
+        hit.hit["date"] ? Date.parse(hit.hit["date"]) : Date.new
+      end
+      concat hits.reverse
     end
 
     private
@@ -27,7 +30,7 @@ module RelatonOgc
     def from_json(docid, **_opts)
       ref = docid.sub /^OGC\s/, ""
       data.select do |_k, doc|
-        doc["identifier"] =~ Regexp.new(ref)
+        doc["type"] != "CC" && doc["identifier"].include?(ref)
       end.map { |_k, h| Hit.new(h, self) }
     end
 
