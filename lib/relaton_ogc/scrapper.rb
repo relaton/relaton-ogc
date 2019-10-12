@@ -33,6 +33,7 @@ module RelatonOgc
       # @return [RelatonOgc::OrcBibliographicItem]
       def parse_page(hit)
         OgcBibliographicItem.new(
+          fetched: Date.today.to_s,
           title: fetch_title(hit["title"]),
           docid: fetch_docid(hit["identifier"]),
           link: fetch_link(hit["URL"]),
