@@ -37,7 +37,7 @@ module RelatonOgc
           title: fetch_title(hit["title"]),
           docid: fetch_docid(hit["identifier"]),
           link: fetch_link(hit["URL"]),
-          type: fetch_type(hit["type"]),
+          doctype: fetch_type(hit["type"]),
           edition: fetch_edition(hit["identifier"]),
           abstract: fetch_abstract(hit["description"]),
           contributor: fetch_contributor(hit),
