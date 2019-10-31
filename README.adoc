@@ -2,7 +2,7 @@
 
 RelatonOgc is a Ruby gem that implements the https://github.com/metanorma/metanorma-model-iso#iso-bibliographic-item[IsoBibliographicItem model].
 
-You can use it to retrieve metadata of OGC Standards from https://raw.githubusercontent.com/opengeospatial/NamingAuthority/master/incubation/bibliography/bibliography.json, and access such metadata through the `IsoBibliographicItem` object.
+You can use it to retrieve metadata of OGC Standards from https://raw.githubusercontent.com/opengeospatial/NamingAuthority/master/incubation/bibliography/bibliography.json, and access such metadata through the `OgcBibliographicItem` object.
 
 == Installation
 
@@ -110,7 +110,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 == Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/relaton_ogc.
+Bug reports and pull requests are welcome on GitHub at https://github.com/calconnenct/relaton_ogc.
 
 == License
 
