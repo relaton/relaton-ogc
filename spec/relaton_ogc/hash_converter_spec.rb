@@ -4,7 +4,6 @@ RSpec.describe RelatonOgc::HashConverter do
     hash = YAML.load_file "spec/fixtures/ogc_bib_item.yml"
     bib = RelatonOgc::HashConverter.hash_to_bib hash
     item = RelatonOgc::OgcBibliographicItem.new bib
-    hash["fetched"] = Date.today.to_s
     expect(item.to_hash).to eq hash
   end
 end
