@@ -7,8 +7,17 @@ require "relaton_ogc/scrapper"
 require "relaton_ogc/xml_parser"
 require "relaton_ogc/editorial_group"
 require "relaton_ogc/hash_converter"
+require "digest/md5"
 
 module RelatonOgc
   class Error < StandardError; end
-  # Your code goes here...
+
+  # Returns hash of XML reammar
+  # @return [String]
+  def self.grammar_hash
+    gem_path = File.expand_path "..", __dir__
+    grammars_path = File.join gem_path, "grammars", "*"
+    grammars = Dir[grammars_path].sort.map { |gp| File.read gp }.join
+    Digest::MD5.hexdigest grammars
+  end
 end

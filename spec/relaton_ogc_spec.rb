@@ -1,6 +1,14 @@
+require "jing"
+
 RSpec.describe RelatonOgc do
   it "has a version number" do
     expect(RelatonOgc::VERSION).not_to be nil
+  end
+
+  it "returs grammar hash" do
+    hash = RelatonOgc.grammar_hash
+    expect(hash).to be_instance_of String
+    expect(hash.size).to eq 32
   end
 
   it "fetch hit" do
@@ -22,6 +30,9 @@ RSpec.describe RelatonOgc do
         File.write path, xml, encoding: "UTF-8" unless File.exist? path
         expect(xml).to be_equivalent_to File.open(path, "r:UTF-8", &:read).
           gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
+        schema = Jing.new "spec/fixtures/isobib.rng"
+        errors = schema.validate path
+        expect(errors).to eq []
       end
     end
   end

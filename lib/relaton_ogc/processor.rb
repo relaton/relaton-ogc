@@ -29,5 +29,11 @@ module RelatonOgc
       item_hash = ::RelatonOgc::HashConverter.hash_to_bib(hash)
       ::RelatonOgc::OgcBibliographicItem.new item_hash
     end
+
+    # Returns hash of XML grammar
+    # @return [String]
+    def grammar_hash
+      @grammar_hash ||= ::RelatonOgc.grammar_hash
+    end
   end
 end

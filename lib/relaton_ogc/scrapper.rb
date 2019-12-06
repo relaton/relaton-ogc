@@ -7,6 +7,7 @@ module RelatonOgc
       "CC" => "Conformance Class",
       "CR" => "Change Request",
       "CS" => "Community Standard",
+      "CP" => "Community Practice",
       "DP" => "Discussion Paper",
       "DP-Draft" => "Draft Discussion Paper",
       "IPR" => "Interoperability Program Report - Engineering Specification",
@@ -18,7 +19,7 @@ module RelatonOgc
       "PC" => "Profile Corrigendum",
       "PER" => "Public Engineering Report",
       "POL" => "Policy",
-      "POL-NTS" => "Policy - Name Type Specification",
+      "POLNTS" => "Policy - Name Type Specification",
       "Primer" => "Primer",
       "Profile" => "Profile",
       "RFC" => "Request for Comment",
@@ -44,10 +45,15 @@ module RelatonOgc
           language: ["en"],
           script: ["Latn"],
           date: fetch_date(hit["date"]),
+          editorialgroup: fetch_editorialgroup,
         )
       end
 
       private
+
+      def fetch_editorialgroup
+        EditorialGroup.new committee: "technical"
+      end
 
       # @param title [String]
       # @return [Array<RelatonIsoBib::TypedTitleString>]
