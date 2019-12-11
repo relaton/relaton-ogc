@@ -1,32 +1,34 @@
 module RelatonOgc
   module Scrapper
     TYPES = {
-      "AS" => "Abstract Specification",
-      "BP" => "Best Practice",
-      "CAN" => "Candidate Standard",
-      "CC" => "Conformance Class",
-      "CR" => "Change Request",
-      "CS" => "Community Standard",
-      "CP" => "Community Practice",
-      "DP" => "Discussion Paper",
-      "DP-Draft" => "Draft Discussion Paper",
-      "IPR" => "Interoperability Program Report - Engineering Specification",
-      "IS" => "Implementation Standard",
-      "ISC" => "Implementation Standard Corrigendum",
-      "ISx" => "Extension Package Standard",
-      "Notes" => "Notes",
-      "ORM" => "OGC Reference Model",
-      "PC" => "Profile Corrigendum",
-      "PER" => "Public Engineering Report",
-      "POL" => "Policy",
-      "POLNTS" => "Policy - Name Type Specification",
-      "Primer" => "Primer",
-      "Profile" => "Profile",
-      "RFC" => "Request for Comment",
-      "Retired" => "Retired document",
-      "SAP" => "Standard Application Profile",
-      "TS" => "Test Suite",
-      "WhitePaper" => "Whitepaper",
+      "AS" => "abstract-specification",
+      "BP" => "best-practice",
+      "CAN" => "candidate-standard",
+      "CC" => "conformance-class",
+      "CR" => "change-request",
+      "CP" => "community-practice",
+      "CS" => "community-standard",
+      "DP" => "discussion-paper",
+      "DP-Draft" => "draft-discussion-paper",
+      "IPR" => "interoperability-program-report",
+      "IS" => "implementation-standard",
+      "ISC" => "implementation-standard-corrigendum",
+      "ISx" => "extension-package-standard",
+      "Notes" => "notes",
+      "ORM" => "ogc-reference-model",
+      "PC" => "profile-corrigendum",
+      "PER" => "public-engineering-report",
+      "POL" => "policy",
+      "POLNTS" => "policy-name-type-specification",
+      "Primer" => "primer",
+      "Profile" => "profile",
+      "RFC" => "request-for-comment",
+      "Retired" => "retired",
+      "SAP" => "standard-application-profile",
+      "TS" => "test-suite",
+      "WhitePaper" => "whitepaper",
+      "ATB" => "approved-technical-baseline",
+      "RP" => "recommendation-paper",
     }.freeze
 
     class << self
@@ -85,7 +87,7 @@ module RelatonOgc
       # @param type [String]
       # @return [String]
       def fetch_type(type)
-        TYPES[type.sub(/^D-/, "")].downcase.gsub " ", "-"
+        TYPES[type.sub(/^D-/, "")]
       end
 
       # @param identifier [String]

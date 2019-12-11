@@ -1,12 +1,14 @@
 require "faraday"
 require "relaton_ogc/hit"
+require "fileutils"
 
 module RelatonOgc
   class HitCollection < RelatonBib::HitCollection
     ENDPOINT = "https://raw.githubusercontent.com/opengeospatial/"\
       "NamingAuthority/master/incubation/bibliography/bibliography.json".freeze
-    DATAFILE = File.expand_path "data/bibliography.json", __dir__
-    ETAGFILE = File.expand_path "data/etag.txt", __dir__
+    DATADIR = File.expand_path ".relaton/ogc/", Dir.home
+    DATAFILE = File.expand_path "bibliography.json", DATADIR
+    ETAGFILE = File.expand_path "etag.txt", DATADIR
 
     # @param ref [Strig]
     # @param year [String]
@@ -50,8 +52,9 @@ module RelatonOgc
     def fetch_data
       resp = Faraday.new(ENDPOINT, headers: { "If-None-Match" => etag }).get
       # return if there aren't any changes since last fetching
-      return unless resp.status == 200
+      raise RelatonBib::RequestError, "Could not access #{ENDPOINT}" unless resp.status == 200
 
+      FileUtils.mkdir_p DATADIR unless Dir.exist? DATADIR
       self.etag = resp[:etag]
       @data = JSON.parse resp.body
       File.write DATAFILE, @data.to_json, encoding: "UTF-8"
