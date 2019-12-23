@@ -1,5 +1,13 @@
 = RelatonOgc
 
+image:https://img.shields.io/gem/v/relaton-ogc.svg["Gem Version", link="https://rubygems.org/gems/relaton-ogc"]
+image:https://github.com/relaton/relaton-ogc/workflows/macos/badge.svg["Build Status (macOS)", link="https://github.com/relaton/relaton-ogc/actions?workflow=macos"]
+image:https://github.com/relaton/relaton-ogc/workflows/windows/badge.svg["Build Status (Windows)", link="https://github.com/relaton/relaton-ogc/actions?workflow=windows"]
+image:https://github.com/relaton/relaton-ogc/workflows/ubuntu/badge.svg["Build Status (Ubuntu)", link="https://github.com/relaton/relaton-ogc/actions?workflow=ubuntu"]
+image:https://codeclimate.com/github/relaton/relaton-ogc/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/relaton/relaton-ogc"]
+image:https://img.shields.io/github/issues-pr-raw/relaton/relaton-ogc.svg["Pull Requests", link="https://github.com/relaton/relaton-ogc/pulls"]
+image:https://img.shields.io/github/commits-since/relaton/relaton-ogc/latest.svg["Commits since latest",link="https://github.com/relaton/relaton-ogc/releases"]
+
 RelatonOgc is a Ruby gem that implements the https://github.com/metanorma/metanorma-model-iso#iso-bibliographic-item[IsoBibliographicItem model].
 
 You can use it to retrieve metadata of OGC Standards from https://raw.githubusercontent.com/opengeospatial/NamingAuthority/master/incubation/bibliography/bibliography.json, and access such metadata through the `OgcBibliographicItem` object.
