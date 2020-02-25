@@ -1,8 +1,5 @@
 module RelatonOgc
   class Hit < RelatonBib::Hit
-    # @return [RelatonNist::HitCollection]
-    attr_reader :hit_collection
-
     # Parse page.
     # @return [RelatonNist::NistBliographicItem]
     def fetch

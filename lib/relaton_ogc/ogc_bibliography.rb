@@ -4,7 +4,7 @@ module RelatonOgc
       # @param text [String]
       # @return [RelatonOgc::HitCollection]
       def search(text, year = nil, opts = {})
-        HitCollection.new text, year, opts
+        HitCollection.new text, year
       rescue Faraday::ConnectionFailed
         raise RelatonBib::RequestError, "Could not access https://www.nist.gov"
       end

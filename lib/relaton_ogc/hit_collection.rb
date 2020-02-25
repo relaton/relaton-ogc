@@ -13,14 +13,11 @@ module RelatonOgc
     # @param ref [Strig]
     # @param year [String]
     # @param opts [Hash]
-    def initialize(ref, year = nil, _opts = {})
-      @text = ref
-      @year = year
-      @fetched = false
-      hits = from_json(ref).sort_by do |hit|
+    def initialize(ref, year = nil)
+      super
+      @array = from_json(ref).sort_by do |hit|
         hit.hit["date"] ? Date.parse(hit.hit["date"]) : Date.new
-      end
-      concat hits.reverse
+      end.reverse
     end
 
     private
