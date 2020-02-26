@@ -9,7 +9,11 @@ module RelatonOgc
       def from_xml(xml)
         doc = Nokogiri::XML(xml)
         isoitem = doc.at "/bibitem|/bibdata"
-        OgcBibliographicItem.new item_data(isoitem)
+        if isoitem
+          OgcBibliographicItem.new item_data(isoitem)
+        else
+          warn "[relato-ogc] can't find bibitem or bibdata element in the XML"
+        end
       end
 
       private

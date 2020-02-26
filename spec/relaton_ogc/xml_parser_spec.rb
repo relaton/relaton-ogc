@@ -9,4 +9,11 @@ RSpec.describe RelatonOgc::XMLParser do
     errors = schema.validate "spec/fixtures/ogc_bib_item.xml"
     expect(errors).to eq []
   end
+
+  it "warn if XML doesn't have bibitem or bibdata element" do
+    item = ""
+    expect { item = RelatonOgc::XMLParser.from_xml "" }.to output(/can't find bibitem/)
+      .to_stderr
+    expect(item).to be_nil
+  end
 end
