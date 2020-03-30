@@ -74,5 +74,12 @@ RSpec.describe RelatonOgc do
         expect(result.doctype).to eq "implementation-standard"
       end
     end
+
+    it "get OGC 15-043r3" do
+      VCR.use_cassette "data" do
+        result = RelatonOgc::OgcBibliography.get "OGC 15-043r3"
+        expect(result).to be_instance_of RelatonOgc::OgcBibliographicItem
+      end
+    end
   end
 end

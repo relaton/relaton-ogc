@@ -26,6 +26,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "debase"
   spec.add_development_dependency "equivalent-xml", "~> 0.6"
+  spec.add_development_dependency "pry-byebug"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "ruby-debug-ide"
@@ -35,5 +36,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "webmock"
 
   spec.add_dependency "faraday", "~> 1.0.0"
-  spec.add_dependency "relaton-iso-bib", "~> 0.8.0"
+  spec.add_dependency "relaton-iso-bib", "~> 0.9.0"
 end

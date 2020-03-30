@@ -12,7 +12,7 @@ module RelatonOgc
         if isoitem
           OgcBibliographicItem.new item_data(isoitem)
         else
-          warn "[relato-ogc] can't find bibitem or bibdata element in the XML"
+          warn "[relaton-ogc] can't find bibitem or bibdata element in the XML"
         end
       end
 
