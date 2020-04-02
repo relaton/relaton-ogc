@@ -36,5 +36,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "webmock"
 
   spec.add_dependency "faraday", "~> 1.0.0"
-  spec.add_dependency "relaton-iso-bib", "~> 0.9.0"
+  spec.add_dependency "relaton-iso-bib", ">= 0.9.1"
 end

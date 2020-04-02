@@ -1,46 +1,49 @@
 module RelatonOgc
   module Scrapper
     TYPES = {
-      "AS" => "abstract-specification",
-      "BP" => "best-practice",
-      "CAN" => "candidate-standard",
-      "CC" => "conformance-class",
-      "CR" => "change-request",
-      "CP" => "community-practice",
-      "CS" => "community-standard",
-      "DP" => "discussion-paper",
-      "DP-Draft" => "draft-discussion-paper",
-      "IPR" => "interoperability-program-report",
-      "IS" => "implementation-standard",
-      "ISC" => "implementation-standard-corrigendum",
-      "ISx" => "extension-package-standard",
-      "Notes" => "notes",
-      "ORM" => "ogc-reference-model",
-      "PC" => "profile-corrigendum",
-      "PER" => "public-engineering-report",
-      "POL" => "policy",
-      "POLNTS" => "policy-name-type-specification",
-      "Primer" => "primer",
-      "Profile" => "profile",
-      "RFC" => "request-for-comment",
-      "Retired" => "retired",
-      "SAP" => "standard-application-profile",
-      "TS" => "test-suite",
-      "WhitePaper" => "whitepaper",
-      "ATB" => "approved-technical-baseline",
-      "RP" => "recommendation-paper",
+      "AS" => { type: "abstract-specification-topic" },
+      "BP" => { type: "best-practice", subtype: "general" },
+      "CAN" => { type: "standard", subtype: "general", stage: "draft" },
+      # "CC" => "conformance-class",
+      "CR" => { type: "change-request-supporting-document" },
+      "CP" => { type: "community-practice" },
+      "CS" => { type: "community-standard" },
+      "DP" => { type: "discussion-paper" },
+      "DP-Draft" => { type: "discussion-paper", stage: "draft" },
+      "IPR" => { type: "engineering-report" },
+      "IS" => { type: "standard", subtype: "implementation" },
+      "ISC" => { type: "standard", subtype: "implementation" },
+      "ISx" => { type: "standard", subtype: "extesion" },
+      "Notes" => { type: "other" },
+      "ORM" => { type: "reference-model" },
+      "PC" => { type: "standard", subtype: "profile" },
+      "PER" => { type: "engineering-report" },
+      "POL" => { type: "standard" },
+      # "POLNTS" => "policy-name-type-specification",
+      "Primer" => { type: "other" },
+      "Profile" => { type: "standard", subtype: "profile" },
+      "RFC" => { type: "standard", stage: "draft" },
+      # "Retired" => "retired",
+      "SAP" => { type: "standard", subtype: "profile" },
+      # "TS" => "test-suite", # @PENDING
+      "WhitePaper" => { type: "white-paper" },
+      "ATB" => { type: "other" },
+      "RP" => { type: "discussion-paper" },
     }.freeze
 
     class << self
       # papam hit [Hash]
       # @return [RelatonOgc::OrcBibliographicItem]
       def parse_page(hit)
+        type = fetch_type(hit["type"])
         OgcBibliographicItem.new(
           fetched: Date.today.to_s,
           title: fetch_title(hit["title"]),
           docid: fetch_docid(hit["identifier"]),
           link: fetch_link(hit["URL"]),
-          doctype: fetch_type(hit["type"]),
+          doctype: type[:type],
+          docsubtype: type[:subtype],
+          docstatus: fetch_status(type[:stage]),
           edition: fetch_edition(hit["identifier"]),
           abstract: fetch_abstract(hit["description"]),
           contributor: fetch_contributor(hit),
@@ -88,6 +91,12 @@ module RelatonOgc
       # @return [String]
       def fetch_type(type)
         TYPES[type.sub(/^D-/, "")]
+      end
+
+      # @param stage [String]
+      # @return [RelatonBib::DocumentStatus, NilClass]
+      def fetch_status(stage)
+        stage && RelatonBib::DocunentStatus.new(stage: stage)
       end
 
       # @param identifier [String]

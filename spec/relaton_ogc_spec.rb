@@ -63,15 +63,23 @@ RSpec.describe RelatonOgc do
 
     it "ignore CC types" do
       VCR.use_cassette "data" do
+        path = "spec/fixtures/12_128r14.xml"
         result = RelatonOgc::OgcBibliography.get "12-128r14", nil, {}
-        expect(result.doctype).to eq "implementation-standard"
+        xml = result.to_xml bibdata: true
+        File.write path, xml, encoding: "UTF-8" unless File.exist? path
+        expect(xml).to be_equivalent_to File.read(path, encoding: "UTF-8").
+          sub /(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s
+        schema = Jing.new "spec/fixtures/isobib.rng"
+        errors = schema.validate path
+        expect(errors).to eq []
       end
     end
 
     it "returns last date" do
       VCR.use_cassette "data" do
         result = RelatonOgc::OgcBibliography.get "16-079", nil, {}
-        expect(result.doctype).to eq "implementation-standard"
+        expect(result.doctype).to eq "standard"
+        expect(result.docsubtype).to eq "implementation"
       end
     end
 

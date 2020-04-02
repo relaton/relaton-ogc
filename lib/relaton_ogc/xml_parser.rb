@@ -8,15 +8,27 @@ module RelatonOgc
       # @return [RelatonOgc::OgcBibliographicItem]
       def from_xml(xml)
         doc = Nokogiri::XML(xml)
-        isoitem = doc.at "/bibitem|/bibdata"
-        if isoitem
-          OgcBibliographicItem.new item_data(isoitem)
+        item = doc.at "/bibitem|/bibdata"
+        if item
+          OgcBibliographicItem.new item_data(item)
         else
           warn "[relaton-ogc] can't find bibitem or bibdata element in the XML"
         end
       end
 
       private
+
+      # Override RelatonIsoBib::XMLParser.item_data method.
+      # @param item [Nokogiri::XML::Element]
+      # @returtn [Hash]
+      def item_data(item)
+        data = super
+        ext = item.at "./ext"
+        return data unless ext
+
+        data[:docsubtype] = ext.at("./docsubtype")&.text
+        data
+      end
 
       # @TODO Organization doesn't recreated
       # @param ext [Nokogiri::XML::Element]

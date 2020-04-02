@@ -1,5 +1,5 @@
 <bibdata type="standard">
-  <fetched>2019-12-06</fetched>
+  <fetched>2020-04-01</fetched>
   <title type="title-main" format="text/plain" language="en" script="Latn">Development of Spatial Data Infrastructures for Marine Data Management</title>
   <title type="main" format="text/plain" language="en" script="Latn">Development of Spatial Data Infrastructures for Marine Data Management</title>
   <uri type="obp">https://portal.opengeospatial.org/files/?artifact_id=88037</uri>
@@ -41,7 +41,7 @@ this study was to demonstrate to stakeholders the diversity, richness and value 
 Marine SDI – specifically data, analysis, interoperability and associated IT services&#13;
 - including web services - in addressing needs of the marine domain.</abstract>
   <ext>
-    <doctype>public-engineering-report</doctype>
+    <doctype>engineering-report</doctype>
     <editorialgroup>
       <committee>technical</committee>
     </editorialgroup>
