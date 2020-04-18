@@ -90,7 +90,7 @@ module RelatonOgc
       # @param type [String]
       # @return [String]
       def fetch_type(type)
-        TYPES[type.sub(/^D-/, "")]
+        TYPES[type.sub(/^D-/, "")] || { type: "other" }
       end
 
       # @param stage [String]
