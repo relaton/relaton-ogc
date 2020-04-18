@@ -91,7 +91,7 @@ RSpec.describe RelatonOgc do
     end
 
     it "get document with unknown type" do
-      VCR.use_cassette "ogc_09_048" do
+      VCR.use_cassette "data" do
         result = RelatonOgc::OgcBibliography.get "OGC 09-048"
         expect(result.doctype).to eq "other"
       end
