@@ -96,5 +96,12 @@ RSpec.describe RelatonOgc do
         expect(result.doctype).to eq "other"
       end
     end
+
+    it "handle empty reference" do
+      VCR.use_cassette "data" do
+        result = RelatonOgc::OgcBibliography.get "OGC "
+        expect(result).to be_nil
+      end
+    end
   end
 end

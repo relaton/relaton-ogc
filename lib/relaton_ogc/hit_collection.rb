@@ -16,7 +16,11 @@ module RelatonOgc
     def initialize(ref, year = nil)
       super
       @array = from_json(ref).sort_by do |hit|
-        hit.hit["date"] ? Date.parse(hit.hit["date"]) : Date.new
+        begin
+          hit.hit["date"] ? Date.parse(hit.hit["date"]) : Date.new
+        rescue ArgumentError
+          Date.parse "0000-01-01"
+        end
       end.reverse
     end
 
@@ -27,7 +31,9 @@ module RelatonOgc
     #
     # @param docid [String]
     def from_json(docid, **_opts)
-      ref = docid.sub /^OGC\s/, ""
+      ref = docid.sub(/^OGC\s/, "").strip
+      return [] if ref.empty?
+
       data.select do |_k, doc|
         doc["type"] != "CC" && doc["identifier"].include?(ref)
       end.map { |_k, h| Hit.new(h, self) }
