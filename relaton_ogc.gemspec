@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "RelatonOgc: retrieve OGC Standards for bibliographic "\
                        "use using the OgcBibliographicItem model"
-  spec.description   = "RelatonIso: retrieve ISO Standards for bibliographic "\
-                       "use using the IsoBibliographicItem model"
+  spec.description   = "RelatonOgc: retrieve OGC Standards for bibliographic "\
+                       "use using the OgcBibliographicItem model"
   spec.homepage      = "https://github.com/relaton/relaton-ogc"
   spec.license       = "BSD-2-Clause"
 
@@ -36,5 +36,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "webmock"
 
   spec.add_dependency "faraday", "~> 1.0.0"
-  spec.add_dependency "relaton-iso-bib", "~> 1.0.0"
+  spec.add_dependency "relaton-iso-bib", ">= 1.0.1"
 end

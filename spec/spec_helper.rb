@@ -2,7 +2,7 @@ require "bundler/setup"
 require "rspec/matchers"
 require "equivalent-xml"
 
-Dir["./spec/support/**/*.rb"].each { |f| require f }
+Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 
 require "relaton_ogc"
 
