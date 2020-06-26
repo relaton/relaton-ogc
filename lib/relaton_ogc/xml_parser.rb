@@ -6,17 +6,24 @@ module RelatonOgc
       # Override RelatonIsoBib::XMLParser.form_xml method.
       # @param xml [String]
       # @return [RelatonOgc::OgcBibliographicItem]
-      def from_xml(xml)
-        doc = Nokogiri::XML(xml)
-        item = doc.at "/bibitem|/bibdata"
-        if item
-          OgcBibliographicItem.new item_data(item)
-        else
-          warn "[relaton-ogc] can't find bibitem or bibdata element in the XML"
-        end
-      end
+      # def from_xml(xml)
+      #   doc = Nokogiri::XML(xml)
+      #   item = doc.at "/bibitem|/bibdata"
+      #   if item
+      #     OgcBibliographicItem.new item_data(item)
+      #   else
+      #     warn "[relaton-ogc] can't find bibitem or bibdata element in the XML"
+      #   end
+      # end
 
       private
+
+      # override RelatonIsoBib::IsoBibliographicItem.bib_item method
+      # @param item_hash [Hash]
+      # @return [RelatonOgc::OgcBibliographicItem]
+      def bib_item(item_hash)
+        OgcBibliographicItem.new item_hash
+      end
 
       # Override RelatonIsoBib::XMLParser.item_data method.
       # @param item [Nokogiri::XML::Element]

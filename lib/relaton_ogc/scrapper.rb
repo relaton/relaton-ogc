@@ -38,6 +38,7 @@ module RelatonOgc
         type = fetch_type(hit["type"])
         OgcBibliographicItem.new(
           fetched: Date.today.to_s,
+          type: "standard",
           title: fetch_title(hit["title"]),
           docid: fetch_docid(hit["identifier"]),
           link: fetch_link(hit["URL"]),
@@ -61,18 +62,9 @@ module RelatonOgc
       end
 
       # @param title [String]
-      # @return [Array<RelatonIsoBib::TypedTitleString>]
+      # @return [Array<RelatonBib::TypedTitleString>]
       def fetch_title(title)
-        [
-          RelatonIsoBib::TypedTitleString.new(
-            type: "title-main", content: title, language: "en", script: "Latn",
-            format: "text/plain"
-          ),
-          RelatonIsoBib::TypedTitleString.new(
-            type: "main", content: title, language: "en", script: "Latn",
-            format: "text/plain"
-          ),
-        ]
+        RelatonBib::TypedTitleString.from_string title, "en", "Latn"
       end
 
       # @param identifier [String]
