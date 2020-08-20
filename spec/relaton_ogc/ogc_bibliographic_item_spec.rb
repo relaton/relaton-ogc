@@ -9,9 +9,15 @@ RSpec.describe RelatonOgc::OgcBibliographicItem do
     hash = YAML.load_file "spec/fixtures/ogc_bib_item.yml"
     bib_hash = RelatonOgc::HashConverter.hash_to_bib hash
     item = RelatonOgc::OgcBibliographicItem.new bib_hash
-    bib = item.to_asciibib
-    file = "spec/fixtures/asciibib.adoc"
-    File.write file, bib, encoding: "UTF-8" unless File.exist? file
-    expect(bib).to eq File.read(file, encoding: "UTF-8")
+    expect(item.to_asciibib).to include <<~ASCIIBIB
+      editorialgroup.committee:: technical
+      editorialgroup.subcommittee.type:: OGC
+      editorialgroup.subcommittee.number:: 11
+      editorialgroup.subcommittee.name:: Subcommittee
+      editorialgroup.workgroup.type:: WG
+      editorialgroup.workgroup.number:: 22
+      editorialgroup.workgroup.name:: Working
+      docsubtype:: Document subtype
+    ASCIIBIB
   end
 end
