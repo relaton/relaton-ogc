@@ -52,6 +52,17 @@ module RelatonOgc
       hash
     end
 
+    # @param prefix [String]
+    # @return [String]
+    def to_asciibib(prefix)
+      pref = prefix.empty? ? prefix : prefix + "."
+      pref += "editorialgroup"
+      out = "#{pref}.committee:: #{committee}\n"
+      out += subcommittee.to_asciibib "#{pref}.subcommittee" if subcommittee
+      out += workgroup.to_asciibib "#{pref}.workgroup" if workgroup
+      out
+    end
+
     private
 
     # @param group [Hash, RelatonIsoBib::IsoSubgroup]

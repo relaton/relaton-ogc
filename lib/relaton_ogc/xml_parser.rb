@@ -3,19 +3,6 @@ require "nokogiri"
 module RelatonOgc
   class XMLParser < RelatonIsoBib::XMLParser
     class << self
-      # Override RelatonIsoBib::XMLParser.form_xml method.
-      # @param xml [String]
-      # @return [RelatonOgc::OgcBibliographicItem]
-      # def from_xml(xml)
-      #   doc = Nokogiri::XML(xml)
-      #   item = doc.at "/bibitem|/bibdata"
-      #   if item
-      #     OgcBibliographicItem.new item_data(item)
-      #   else
-      #     warn "[relaton-ogc] can't find bibitem or bibdata element in the XML"
-      #   end
-      # end
-
       private
 
       # override RelatonIsoBib::IsoBibliographicItem.bib_item method
@@ -48,7 +35,7 @@ module RelatonOgc
         sc = iso_subgroup eg&.at("subcommittee")
         wg = iso_subgroup eg&.at("workgroup")
         EditorialGroup.new(
-          committee: committe, subcommittee: sc, workgroup: wg,
+          committee: committe, subcommittee: sc, workgroup: wg
         )
       end
     end

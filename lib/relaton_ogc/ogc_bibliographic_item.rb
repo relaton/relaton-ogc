@@ -20,7 +20,8 @@ module RelatonOgc
     # @param docsubtype [String]
     def initialize(**args)
       if args[:docsubtype] && !SUBTYPES.include?(args[:docsubtype])
-        warn "[relaton-ogc] WARNING: invalid document subtype: #{args[:docsubtype]}"
+        warn "[relaton-ogc] WARNING: invalid document "\
+        "subtype: #{args[:docsubtype]}"
       end
 
       @docsubtype = args.delete :docsubtype
@@ -47,6 +48,15 @@ module RelatonOgc
           ics.each { |i| i.to_xml b }
         end
       end
+    end
+
+    # @param prefix [String]
+    # @return [String]
+    def to_asciibib(prefix = "")
+      pref = prefix.empty? ? prefix : prefix + "."
+      out = super
+      out += "#{pref}docsubtype:: #{docsubtype}\n" if docsubtype
+      out
     end
   end
 end

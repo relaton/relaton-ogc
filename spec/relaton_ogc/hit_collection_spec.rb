@@ -1,6 +1,7 @@
 RSpec.describe RelatonOgc::HitCollection do
   it "fetch data from server" do
-    expect(File).to receive(:ctime).and_return(Date.today.prev_day.to_time).at_most(:once)
+    expect(File).to receive(:ctime).and_return(Date.today.prev_day.to_time)
+      .at_most(:once)
     expect(File).to receive(:write).twice
     expect(File).to receive(:read).with(
       RelatonOgc::HitCollection::ETAGFILE, encoding: "UTF-8"
