@@ -35,6 +35,11 @@ module RelatonOgc
       @workgroup    = subgroup args[:workgroup]
     end
 
+    # @return [true]
+    def presence?
+      true
+    end
+
     # @param builder [Nokogiri::XML::Builder]
     def to_xml(builder)
       builder.editorialgroup do

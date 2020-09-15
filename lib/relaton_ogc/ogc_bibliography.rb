@@ -3,10 +3,10 @@ module RelatonOgc
     class << self
       # @param text [String]
       # @return [RelatonOgc::HitCollection]
-      def search(text, year = nil, opts = {})
+      def search(text, year = nil, _opts = {})
         HitCollection.new text, year
       rescue Faraday::ConnectionFailed
-        raise RelatonBib::RequestError, "Could not access https://www.nist.gov"
+        raise RelatonBib::RequestError, HitCollection::ENDPOINT
       end
 
       # @param code [String] the OGC standard Code to look up (e..g "8200")
