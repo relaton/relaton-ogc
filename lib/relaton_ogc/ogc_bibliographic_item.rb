@@ -25,8 +25,8 @@ module RelatonOgc
       end
 
       @docsubtype = args.delete :docsubtype
+      # @doctype = args.delete :doctype
       super
-      # @doctype = args[:doctype]
     end
 
     # @return [Hash]

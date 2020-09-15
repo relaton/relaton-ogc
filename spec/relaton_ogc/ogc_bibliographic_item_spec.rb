@@ -17,7 +17,7 @@ RSpec.describe RelatonOgc::OgcBibliographicItem do
       editorialgroup.workgroup.type:: WG
       editorialgroup.workgroup.number:: 22
       editorialgroup.workgroup.name:: Working
-      docsubtype:: Document subtype
+      docsubtype:: general
     ASCIIBIB
   end
 end

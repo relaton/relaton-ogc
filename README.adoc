@@ -18,7 +18,7 @@ Add this line to your application's Gemfile:
 
 [source,ruby]
 ----
-gem 'relaton_ogc'
+gem 'relaton-ogc'
 ----
 
 And then execute:
@@ -27,7 +27,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install relaton_ogc
+    $ gem install relaton-ogc
 
 == Usage
 
@@ -35,8 +35,11 @@ Or install it yourself as:
 
 [source,ruby]
 ----
+require 'relaton_ogc'
+=> true
+
 hits = RelatonOgc::OgcBibliography.search("OGC 19-025r1")
-=> [<RelatonOgc::Hit:0x007fcab6b9aab8 @text="OGC 19-025r1" @fetched="false" @fullIdentifier="" @title="">]
+=> <RelatonOgc::HitCollection:0x007fcc8e085ba8 @ref=OGC 19-025r1 @fetched=false>
 
 tem = hits[0].fetch
 => #<RelatonOgc::OgcBibliographicItem:0x007fcab3cb4758
@@ -72,7 +75,10 @@ item.to_xml bibdata: true
       </date>
       ...
       <ext>
-        <doctype>public-engineering-report</doctype>
+        <doctype>engineering-report</doctype>
+        <editorialgroup>
+          <committee>technical</committee>
+        </editorialgroup>
       </ext>
     </bibdata>"
 ----
@@ -81,7 +87,8 @@ item.to_xml bibdata: true
 [source,ruby]
 ----
 RelatonOgc::OgcBibliography.get "OGC 19-025r1", "2019", {}
-fetching OGC 19-025r1...
+[relaton-ogc] ("OGC 19-025r1") fetching...
+[relaton-ogc] ("OGC 19-025r1") found 19-025r1
 => #<RelatonOgc::OgcBibliographicItem:0x007fc322e9aba0
 ...
 ----

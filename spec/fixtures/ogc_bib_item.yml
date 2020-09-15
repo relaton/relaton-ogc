@@ -15,7 +15,7 @@ title:
 link:
   type: obp
   content: https://portal.opengeospatial.org/files/?artifact_id=88037
-type: public-engineering-report
+type: standard
 docid:
   id: 19-025r1
   type: OGC
@@ -60,4 +60,4 @@ editorialgroup:
     name: Working
     type: WG
     number: 22
-docsubtype: Document subtype
+docsubtype: general
