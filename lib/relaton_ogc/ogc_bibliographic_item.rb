@@ -36,11 +36,14 @@ module RelatonOgc
       hash
     end
 
-    # @param builder [Nokogiri::XML::Builder]
     # @param opts [Hash]
+    # @option opts [Nokogiri::XML::Builder] :builder XML builder
     # @option opts [Boolean] :bibdata
-    def to_xml(builder = nil, **opts)
-      super do |b|
+    # @option opts [Symbol, NilClass] :date_format (:short), :full
+    # @option opts [String, Symbol] :lang language
+    # @return [String] XML
+    def to_xml(**opts)
+      super **opts do |b|
         b.ext do
           b.doctype doctype if doctype
           b.docsubtype docsubtype if docsubtype
