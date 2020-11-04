@@ -52,10 +52,13 @@ module RelatonOgc
     #
     # fetch data form server and save it to file.
     #
-    def fetch_data
+    def fetch_data # rubocop:disable Metrics/AbcSize
       resp = Faraday.new(ENDPOINT, headers: { "If-None-Match" => etag }).get
       # return if there aren't any changes since last fetching
-      raise RelatonBib::RequestError, "Could not access #{ENDPOINT}" unless resp.status == 200
+      return if resp.status == 304
+      unless resp.status == 200
+        raise RelatonBib::RequestError, "Could not access #{ENDPOINT}"
+      end
 
       FileUtils.mkdir_p DATADIR unless Dir.exist? DATADIR
       self.etag = resp[:etag]
