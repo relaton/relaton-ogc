@@ -52,8 +52,10 @@ module RelatonOgc
     #
     # fetch data form server and save it to file.
     #
-    def fetch_data # rubocop:disable Metrics/AbcSize
-      resp = Faraday.new(ENDPOINT, headers: { "If-None-Match" => etag }).get
+    def fetch_data # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
+      h = {}
+      h["If-None-Match"] = etag if etag
+      resp = Faraday.new(ENDPOINT, headers: h).get
       # return if there aren't any changes since last fetching
       return if resp.status == 304
       unless resp.status == 200
