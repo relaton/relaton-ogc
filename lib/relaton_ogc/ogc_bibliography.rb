@@ -54,9 +54,9 @@ module RelatonOgc
           return { ret: item } if !year
 
           item.date.select { |d| d.type == "published" }.each do |d|
-            return { ret: item } if year.to_i == d.on.year
+            return { ret: item } if year.to_i == d.on(:year)
 
-            missed_years << d.on.year
+            missed_years << d.on(:year)
           end
         end
         { years: missed_years }

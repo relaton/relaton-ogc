@@ -1,3 +1,3 @@
 module RelatonOgc
-  VERSION = "1.5.2".freeze
+  VERSION = "1.6.pre1".freeze
 end
