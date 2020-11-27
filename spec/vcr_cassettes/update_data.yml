@@ -23,7 +23,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '301410'
+      - '301411'
       Content-Type:
       - text/plain; charset=utf-8
       Cache-Control:
@@ -31,7 +31,7 @@ http_interactions:
       Content-Security-Policy:
       - default-src 'none'; style-src 'unsafe-inline'; sandbox
       Etag:
-      - W/"e45ddc258fec07ac8bcee27c4661000d679ca40bd1e384de8eb1ee7f8c101611"
+      - W/"aeda0b3259243cfcfe47634a59fe4fdc43d4ddceae7cb98af466760ccf81c342"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -43,29 +43,29 @@ http_interactions:
       Via:
       - 1.1 varnish (Varnish/6.0), 1.1 varnish
       X-Github-Request-Id:
-      - 99D4:E26C:18BE4A:1A2CDB:5FABC7B4
+      - 3A98:576D:1605B07:171C411:5FC0EAF5
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 11 Nov 2020 11:15:01 GMT
+      - Fri, 27 Nov 2020 12:03:03 GMT
       X-Served-By:
-      - cache-hhn4057-HHN
+      - cache-hhn4047-HHN
       X-Cache:
       - MISS, MISS
       X-Cache-Hits:
       - 0, 0
       X-Timer:
-      - S1605093301.967439,VS0,VE251
+      - S1606478582.129921,VS0,VE1001
       Vary:
       - Authorization,Accept-Encoding, Accept-Encoding
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - e6e4f561c80393b6e23f5952e044e78dd271456d
+      - 46e8bc97037fe2aeb6a606ff800d6e179f748f21
       Expires:
-      - Wed, 11 Nov 2020 11:20:01 GMT
+      - Fri, 27 Nov 2020 12:08:03 GMT
       Source-Age:
-      - '0'
+      - '1'
     body:
       encoding: ASCII-8BIT
       string: '{"1":{"title":"OGC\u00ae IndoorGML 1.1","alternative":"OGC\u00ae IndoorGML
@@ -104,9 +104,10 @@ http_interactions:
         Simonis","contributor":null,"description":"This Engineering Report (ER) summarizes
         the main achievements of the OGC Innovation Program initiative Earth Observation
         Applications Pilot, conducted between December 2019 and July 2020.","publisher":"Open
-        Geospatial Consortium","language":"English","license":null,"source":null,"rights":"","isPartOf":null,"date":"2020-10-26","dateAccepted":null,"dateSubmitted":null,"format":"text\/html","hasFormat":null,"extent":null},"5":{"title":"Core
-        Tiling Conceptual and Logical Models for 2D Euclidean Space","alternative":"Core
-        Tiling Conceptual and Logical Models for 2D Euclidean Space","URI":null,"identifier":"19-014r3","URL":"https:\/\/docs.ogc.org\/as\/19-014r3\/19-014r3.html","type":"AS","creator":"Carl
+        Geospatial Consortium","language":"English","license":null,"source":null,"rights":"","isPartOf":null,"date":"2020-10-26","dateAccepted":null,"dateSubmitted":null,"format":"text\/html","hasFormat":null,"extent":null},"5":{"title":"OGC
+        Abstract Specification Topic 22 - Core Tiling Conceptual and Logical Models
+        for 2D Euclidean Space","alternative":"Core Tiling Conceptual and Logical
+        Models for 2D Euclidean Space","URI":null,"identifier":"19-014r3","URL":"https:\/\/docs.ogc.org\/as\/19-014r3\/19-014r3.html","type":"AS","creator":"Carl
         Reed","contributor":null,"description":"This OGC Abstract Specification (AS)
         defines:\r\n\r\nA conceptual model for tiling space in any dimension and;\r\n\r\nA
         logical model for 2D tiled structures and by extension tiling. The logical
@@ -351,7 +352,7 @@ http_interactions:
         Geospatial Consortium","language":"English","license":null,"source":null,"rights":"","isPartOf":null,"date":"2020-09-17","dateAccepted":null,"dateSubmitted":null,"format":null,"hasFormat":null,"extent":null},"29":{"title":"OGC
         Abstract Specification Topic 1 - Features and geometry \u2013 Part 1: Feature
         models ","alternative":"Features and geometry \u2013 Part 1: Feature models
-        ","URI":null,"identifier":"17-083r13","URL":"https:\/\/docs.ogc.org\/as\/17-087r13\/17-087r13.html","type":"AS","creator":"John
+        ","URI":null,"identifier":"17-087r13","URL":"https:\/\/docs.ogc.org\/as\/17-087r13\/17-087r13.html","type":"AS","creator":"John
         R. Herring","contributor":null,"description":"The Implementation Standard
         Features and geometry \u2013 Part 1: Feature models describes how geographic
         information in datasets and databases using a feature model are structured,
@@ -526,7 +527,7 @@ http_interactions:
         to APIs might enable a more robust and optimized service offering. ","publisher":"Open
         Geospatial Consortium","language":"English","license":null,"source":null,"rights":"","isPartOf":null,"date":"2020-05-12","dateAccepted":null,"dateSubmitted":null,"format":null,"hasFormat":null,"extent":null},"42":{"title":"OGC\u00ae
         OpenSearch Extension for Earth Observation","alternative":"OpenSearch Extension
-        for Earth Observation","URI":null,"identifier":"13-026r9","URL":"http:\/\/docs.opengeospatial.org\/is\/13-026r8\/13-026r8.html","type":"IS","creator":"Pedro
+        for Earth Observation","URI":null,"identifier":"13-026r8","URL":"http:\/\/docs.opengeospatial.org\/is\/13-026r8\/13-026r8.html","type":"IS","creator":"Pedro
         Gon\u00e7alves, Uwe Voges","contributor":null,"description":"This document
         is the specification for the OpenSearch extension for Earth Observation collections
         and products search.\r\n\r\nThis standard is intended to provide a very simple
@@ -2292,7 +2293,7 @@ http_interactions:
         GML 3.3, while a fourth emerged from work on a Testbed-11 Engineering Report[2].","publisher":"Open
         Geospatial Consortium","language":"English","license":null,"source":null,"rights":"","isPartOf":null,"date":"2019-01-20","dateAccepted":null,"dateSubmitted":null,"format":null,"hasFormat":null,"extent":null},"148":{"title":"OGC
         CDB, Leveraging GeoPackage Discussion Paper","alternative":"CDB, Leveraging
-        GeoPackage Discussion Paper","URI":null,"identifier":"18-0077r2","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=82553","type":"DP","creator":"Jay
+        GeoPackage Discussion Paper","URI":null,"identifier":"18-077r2","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=82553","type":"DP","creator":"Jay
         Freeman, Kevin Bentley, Ronald Moore, Samuel Chambers, Glen Quesenberry","contributor":null,"description":"This
         paper offers the results of research, design, and prototype efforts to present
         the OGC standards working group an approach to creating \u201cGeoCDB\u201d\u2014a
@@ -5082,7 +5083,7 @@ http_interactions:
         standard (OGC 15-098). In the future other encodings may be defined, including
         examples such as the use of JSON-LD based on parts of schema.org.","publisher":"Open
         Geospatial Consortium","language":"English","license":null,"source":null,"rights":"","isPartOf":null,"date":"2016-12-22","dateAccepted":null,"dateSubmitted":null,"format":"text\/html","hasFormat":null,"extent":null},"325":{"title":"OGC\u00ae
-        Web Query Service ","alternative":"Web Query Service ","URI":null,"identifier":"16-121r2","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=72295","type":"DP","creator":"Peter
+        Web Query Service ","alternative":"Web Query Service ","URI":null,"identifier":"14-121r2","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=72295","type":"DP","creator":"Peter
         Baumann","contributor":null,"description":"This OGC Web Query Service (WQS)
         defines a service interface for retrieving any kind of subset of information
         provided by the server addressed. WQS is com\u00acpletely agnostic of any
@@ -5571,7 +5572,7 @@ http_interactions:
         enabled by persistent identifiers. This may be at various level of\r\ngranularity.
         ","publisher":"Open Geospatial Consortium","language":"English","license":null,"source":null,"rights":"","isPartOf":null,"date":"2010-07-15","dateAccepted":null,"dateSubmitted":null,"format":null,"hasFormat":null,"extent":null},"361":{"title":"OGC
         Compliance Testing White Paper","alternative":"OGC Compliance Testing White
-        Paper","URI":null,"identifier":"OGC 10-128","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=41359","type":"WhitePaper","creator":"Luis
+        Paper","URI":null,"identifier":"10-128","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=41359","type":"WhitePaper","creator":"Luis
         Bermudez","contributor":null,"description":"This white paper describes the
         OGC Compliance Testing Program. It provides\r\ninformation about:\r\n\u2022
         The need for compliance testing to enable interoperability\r\n\u2022 How to
@@ -5581,8 +5582,7 @@ http_interactions:
         mark\r\n\u2022 Suggested language for procurement documents\r\n\u2022 Trademark
         licensing fees\r\n\u2022 An example of an OGC compliance test ","publisher":"Open
         Geospatial Consortium","language":"English","license":null,"source":null,"rights":"","isPartOf":null,"date":"2010-10-22","dateAccepted":null,"dateSubmitted":null,"format":null,"hasFormat":null,"extent":null},"362":{"title":"OGC
-        Standards and Cloud Computing","alternative":"OGC Standards and Cloud Computing","URI":null,"identifier":"OGC
-        11-036","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=43743","type":"WhitePaper","creator":"Lance
+        Standards and Cloud Computing","alternative":"OGC Standards and Cloud Computing","URI":null,"identifier":"11-036","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=43743","type":"WhitePaper","creator":"Lance
         McKee, Carl Reed, Steven Ramage","contributor":null,"description":"This OGC
         White Paper discusses cloud computing from the perspective of OGC\u2019s\r\ngeospatial
         standards development activities and standards baseline. The paper begins\r\nwith
@@ -5596,8 +5596,7 @@ http_interactions:
         basic issues surrounding geospatial technology. This white paper does not
         discuss\r\nvendor specific cloud computing platforms.","publisher":"Open Geospatial
         Consortium","language":"English","license":null,"source":null,"rights":"","isPartOf":null,"date":"2011-04-07","dateAccepted":null,"dateSubmitted":null,"format":null,"hasFormat":null,"extent":null},"363":{"title":"Open
-        Source and Open Standards","alternative":"Open Source and Open Standards","URI":null,"identifier":"OGC
-        11-110","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=45126","type":"WhitePaper","creator":"Arnulf
+        Source and Open Standards","alternative":"Open Source and Open Standards","URI":null,"identifier":"11-110","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=45126","type":"WhitePaper","creator":"Arnulf
         Christl and Carl Reed","contributor":null,"description":"This article is a
         White Paper jointly published by OGC and OSGeo. It was approved as an official
         joint OSGeo and OGC White Paper by the OSGeo Board of Directors in their 2011-05-05
@@ -5610,7 +5609,7 @@ http_interactions:
         on the associated Talk page: http:\/\/wiki.osgeo.org\/wiki\/Open_Source_and_Open_Standards.","publisher":"Open
         Geospatial Consortium","language":"English","license":null,"source":null,"rights":"","isPartOf":null,"date":"2011-08-11","dateAccepted":null,"dateSubmitted":null,"format":null,"hasFormat":null,"extent":null},"364":{"title":"Geospatial
         Business Intelligence (GeoBI)","alternative":"Geospatial Business Intelligence
-        (GeoBI)","URI":null,"identifier":"OGC 09-044r3","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=49321","type":"WhitePaper","creator":"George
+        (GeoBI)","URI":null,"identifier":"09-044r3","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=49321","type":"WhitePaper","creator":"George
         Percivall, Raj Singh","contributor":null,"description":"BI is an umbrella
         term for a major component of IT infrastructure. It encompasses Data\r\nWarehouses,
         Business Analytics, Dashboards and Scorecards. This IT infrastructure is associated\r\nwith
@@ -5621,8 +5620,7 @@ http_interactions:
         investment from intelligent location data; data discovery and unstructured
         data.","publisher":"Open Geospatial Consortium","language":"English","license":null,"source":null,"rights":"","isPartOf":null,"date":"2012-07-12","dateAccepted":null,"dateSubmitted":null,"format":null,"hasFormat":null,"extent":null},"365":{"title":"Architecture
         of an Access Management Federation for Spatial Data and Services in Germany","alternative":"Architecture
-        of an Access Management Federation for Spatial Data and Services in Germany","URI":null,"identifier":"OGC
-        12-026","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=47848","type":"WhitePaper","creator":"Andreas
+        of an Access Management Federation for Spatial Data and Services in Germany","URI":null,"identifier":"12-026","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=47848","type":"WhitePaper","creator":"Andreas
         Matheus","contributor":null,"description":"An Access Management Federation
         (AMF) is a network of organizations that trust each other for the\r\nmeans
         of sharing protected resources among each other. Worldwide, many academic
@@ -5633,8 +5631,7 @@ http_interactions:
         and DFN-AAI (Germany https:\/\/www.aai.dfn.de).","publisher":"Open Geospatial
         Consortium","language":"English","license":null,"source":null,"rights":"","isPartOf":null,"date":"2012-04-18","dateAccepted":null,"dateSubmitted":null,"format":null,"hasFormat":null,"extent":null},"366":{"title":"OGC
         Sensor Web Enablement: Overview and High Level Architecture","alternative":"OGC
-        Sensor Web Enablement: Overview and High Level Architecture","URI":null,"identifier":"OGC
-        07-165r1","URL":"http:\/\/docs.opengeospatial.org\/wp\/07-165r1\/","type":"WhitePaper","creator":"Mike
+        Sensor Web Enablement: Overview and High Level Architecture","URI":null,"identifier":"07-165r1","URL":"http:\/\/docs.opengeospatial.org\/wp\/07-165r1\/","type":"WhitePaper","creator":"Mike
         Botts, George Percivall, Carl Reed, John Davidson","contributor":null,"description":"A
         sensor network is a computer accessible network of many, spatially distributed
         devices using sensors to monitor conditions at different locations, such as
@@ -5643,7 +5640,7 @@ http_interactions:
         can be discovered and accessed using standard protocols and application program
         interfaces (APIs).","publisher":"Open Geospatial Consortium","language":"English","license":null,"source":null,"rights":"","isPartOf":null,"date":"2013-04-02","dateAccepted":null,"dateSubmitted":null,"format":null,"hasFormat":null,"extent":null},"367":{"title":"The
         Open Geospatial Consortium and EarthCube","alternative":"The Open Geospatial
-        Consortium and EarthCube","URI":null,"identifier":"OGC 11-159","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=46471&version=1","type":"WhitePaper","creator":"David
+        Consortium and EarthCube","URI":null,"identifier":"11-159","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=46471&version=1","type":"WhitePaper","creator":"David
         Maidment, Ben Domenico, Alastair Gemmell, Kerstin Lehnert, David Tarboton,
         Ilya Zaslavsky","contributor":null,"description":"EarthCube aims to create
         an integrated system to access, analyze and share information that is\r\nused
@@ -6074,7 +6071,7 @@ http_interactions:
         The canonical location of the 3.2 all components schema document for 3.3 is\r\nhttp:\/\/schemas.opengis.net\/gml\/3.2.1\/gml.xsd","publisher":"Open
         Geospatial Consortium","language":"English","license":null,"source":null,"rights":"","isPartOf":null,"date":"2015-11-18","dateAccepted":null,"dateSubmitted":null,"format":"text\/html","hasFormat":null,"extent":null},"395":{"title":"OGC\u00ae
         Testbed-11 DGIWG GMLJP2 testing results Engineering Report","alternative":"Testbed-11
-        DGIWG GMLJP2 testing results Engineering Report","URI":null,"identifier":"15-073","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=65887","type":"PER","creator":"E.
+        DGIWG GMLJP2 testing results Engineering Report","URI":null,"identifier":"15-073r2","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=65887","type":"PER","creator":"E.
         Devys, L.Colaiacomo, P. Baumann","contributor":null,"description":"This OGC
         Engineering Report (ER) describes work done in OGC Testbed 11 to test\r\nGMLJP2
         in terms of defining a DGIWG GMLJP2 version 1 profile.\r\nThe requirements
@@ -6929,7 +6926,7 @@ http_interactions:
         <br>\r\n<a href=https:\/\/portal.opengeospatial.org\/files\/?artifact_id=59022&format=docx>docx<\/a>\r\n<\/p>","publisher":"Open
         Geospatial Consortium","language":"English","license":null,"source":null,"rights":"","isPartOf":null,"date":"2014-05-26","dateAccepted":null,"dateSubmitted":null,"format":null,"hasFormat":null,"extent":null},"457":{"title":"Cyberarchitecture
         for Geosciences   White Paper","alternative":"Cyberarchitecture for Geosciences   White
-        Paper","URI":null,"identifier":"OGC 11-145","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=46388","type":"WhitePaper","creator":"George
+        Paper","URI":null,"identifier":"11-145","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=46388","type":"WhitePaper","creator":"George
         Percivall","contributor":null,"description":"The National Science Foundation
         (NSF) is developing EarthCube\u201d - Towards a National Data Infrastructure
         for Earth System Science .  In a new partnership between GEO and the NSF Office
@@ -7198,7 +7195,7 @@ http_interactions:
         these Use Case functions:\r\n\u2022\tHydrologic modeling for historical and
         current stream flow and groundwater conditions\r\n\u2022\tModeling and assessment
         of nutrient load into the Great Lakes\r\n","publisher":"Open Geospatial Consortium","language":"English","license":null,"source":null,"rights":"","isPartOf":null,"date":"2014-02-24","dateAccepted":null,"dateSubmitted":null,"format":null,"hasFormat":null,"extent":null},"481":{"title":"OGC\u00ae
-        CHISP-1 Engineering Report","alternative":"CHISP-1 Engineering Report","URI":null,"identifier":"130=-053r1","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=55244","type":"PER","creator":"Panagiotis
+        CHISP-1 Engineering Report","alternative":"CHISP-1 Engineering Report","URI":null,"identifier":"13-053r1","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=55244","type":"PER","creator":"Panagiotis
         (Peter) A. Vretanos","contributor":null,"description":"This document provides
         a technical description of the work completed for the Climatology-Hydrology
         Information Sharing Pilot, Phase 1 project. \r\nThis document describes a
@@ -12430,5 +12427,5 @@ http_interactions:
         0 - Overview","alternative":"Topic 0 - Overview","URI":null,"identifier":"99-100r1","URL":"https:\/\/portal.opengeospatial.org\/files\/?artifact_id=11496","type":"D-AS","creator":"Cliff
         Kottman","contributor":null,"description":"Introduction and roadmap to the
         Abstract specification.","publisher":"Open Geospatial Consortium","language":"English","license":null,"source":null,"rights":"","isPartOf":null,"date":"1999-06-23","dateAccepted":null,"dateSubmitted":null,"format":null,"hasFormat":null,"extent":null}}'
-  recorded_at: Wed, 11 Nov 2020 11:15:02 GMT
+  recorded_at: Fri, 27 Nov 2020 12:03:03 GMT
 recorded_with: VCR 6.0.0
