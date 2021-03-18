@@ -9,7 +9,7 @@ module RelatonOgc
       # @param item_hash [Hash]
       # @return [RelatonOgc::OgcBibliographicItem]
       def bib_item(item_hash)
-        OgcBibliographicItem.new item_hash
+        OgcBibliographicItem.new **item_hash
       end
 
       # Override RelatonIsoBib::XMLParser.item_data method.
