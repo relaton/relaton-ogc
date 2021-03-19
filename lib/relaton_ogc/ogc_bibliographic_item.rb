@@ -29,6 +29,13 @@ module RelatonOgc
       super
     end
 
+    # @param hash [Hash]
+    # @return [RelatonOgc::OgcBibliographicItem]
+    def self.from_hash(hash)
+      item_hash = ::RelatonOgc::HashConverter.hash_to_bib(hash)
+      new **item_hash
+    end
+
     # @return [Hash]
     def to_hash
       hash = super

@@ -108,11 +108,7 @@ hash = YAML.load_file 'spec/fixtures/ogc_bib_item.yml'
 => {"id"=>"19-025r1",
 ...
 
-bib_hash = RelatonOgc::HashConverter.hash_to_bib hash
-=> {:id=>"19-025r1",
-...
-
-RelatonOgc::OgcBibliographicItem.new bib_hash
+RelatonOgc::OgcBibliographicItem.from_hash hash
 => #<RelatonOgc::OgcBibliographicItem:0x007fc322ef8548
 ...
 ----
