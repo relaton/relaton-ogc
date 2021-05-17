@@ -63,6 +63,22 @@
       </element>
     </define>
   </include>
+  <define name="TextElement" combine="choice">
+    <ref name="hi"/>
+  </define>
+  <define name="PureTextElement" combine="choice">
+    <ref name="hi"/>
+  </define>
+  <define name="hi">
+    <element name="hi">
+      <zeroOrMore>
+        <choice>
+          <ref name="PureTextElement"/>
+          <ref name="stem"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
   <define name="docsubtype">
     <element name="docsubtype">
       <choice>
@@ -116,6 +132,9 @@
         <ref name="termdocsource"/>
       </zeroOrMore>
       <optional>
+        <ref name="misccontainer"/>
+      </optional>
+      <optional>
         <ref name="boilerplate"/>
       </optional>
       <ref name="preface"/>
@@ -126,6 +145,9 @@
         <ref name="annex"/>
       </zeroOrMore>
       <ref name="bibliography"/>
+      <zeroOrMore>
+        <ref name="indexsect"/>
+      </zeroOrMore>
     </element>
   </define>
 </grammar>
