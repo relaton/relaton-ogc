@@ -34,7 +34,7 @@ module RelatonOgc
     class << self
       # papam hit [Hash]
       # @return [RelatonOgc::OrcBibliographicItem]
-      def parse_page(hit)
+      def parse_page(hit) # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
         type = fetch_type(hit["type"])
         OgcBibliographicItem.new(
           fetched: Date.today.to_s,

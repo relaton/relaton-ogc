@@ -9,7 +9,7 @@ module RelatonOgc
       # @param item_hash [Hash]
       # @return [RelatonOgc::OgcBibliographicItem]
       def bib_item(item_hash)
-        OgcBibliographicItem.new **item_hash
+        OgcBibliographicItem.new(**item_hash)
       end
 
       # Override RelatonIsoBib::XMLParser.item_data method.
@@ -35,7 +35,7 @@ module RelatonOgc
         sc = iso_subgroup eg&.at("subcommittee")
         wg = iso_subgroup eg&.at("workgroup")
         EditorialGroup.new(
-          committee: committe, subcommittee: sc, workgroup: wg
+          committee: committe, subcommittee: sc, workgroup: wg,
         )
       end
     end

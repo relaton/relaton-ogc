@@ -74,7 +74,7 @@ module RelatonOgc
     # @return {RelatonIsoBib::IsoSubgroup}
     def subgroup(group)
       if group.is_a?(Hash)
-        RelatonIsoBib::IsoSubgroup.new(**group)
+        RelatonBib::WorkGroup.new(**group)
       else group
       end
     end
