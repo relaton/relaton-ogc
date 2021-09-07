@@ -43,7 +43,7 @@ module RelatonOgc
           docid: fetch_docid(hit["identifier"]),
           link: fetch_link(hit["URL"]),
           doctype: type[:type],
-          docsubtype: type[:subtype],
+          subdoctype: type[:subtype],
           docstatus: fetch_status(type[:stage]),
           edition: fetch_edition(hit["identifier"]),
           abstract: fetch_abstract(hit["description"]),

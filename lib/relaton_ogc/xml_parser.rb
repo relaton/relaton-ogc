@@ -15,14 +15,14 @@ module RelatonOgc
       # Override RelatonIsoBib::XMLParser.item_data method.
       # @param item [Nokogiri::XML::Element]
       # @returtn [Hash]
-      def item_data(item)
-        data = super
-        ext = item.at "./ext"
-        return data unless ext
+      # def item_data(item)
+      #   data = super
+      #   ext = item.at "./ext"
+      #   return data unless ext
 
-        data[:docsubtype] = ext.at("./docsubtype")&.text
-        data
-      end
+      #   data[:docsubtype] = ext.at("./docsubtype")&.text
+      #   data
+      # end
 
       # @TODO Organization doesn't recreated
       # @param ext [Nokogiri::XML::Element]

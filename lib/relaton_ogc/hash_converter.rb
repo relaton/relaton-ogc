@@ -12,7 +12,7 @@ module RelatonOgc
           committee: eg[:committee],
           subcommittee: eg[:subcommittee],
           workgroup: eg[:workgroup],
-          secretariat: eg[:secretariat]
+          secretariat: eg[:secretariat],
         )
       end
     end

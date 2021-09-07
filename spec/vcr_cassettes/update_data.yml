@@ -10,7 +10,7 @@ http_interactions:
       If-None-Match:
       - old_etag
       User-Agent:
-      - Faraday v1.7.0
+      - Faraday v1.7.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -41,29 +41,29 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - AC2A:0E5F:40922F:44598C:612769DC
+      - 512A:1A24:BED76:F3CF1:61375CB5
       Accept-Ranges:
       - bytes
       Date:
-      - Thu, 26 Aug 2021 10:15:57 GMT
+      - Tue, 07 Sep 2021 12:36:05 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-muc13927-MUC
+      - cache-muc13978-MUC
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1629972957.901993,VS0,VE309
+      - S1631018166.617195,VS0,VE274
       Vary:
       - Authorization,Accept-Encoding
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - 457dcfdccb814a8bad0bc39c959f647492fa5cfc
+      - 2fae5d9905e28f233e78dde0e6aa3b7ad767647e
       Expires:
-      - Thu, 26 Aug 2021 10:20:57 GMT
+      - Tue, 07 Sep 2021 12:41:05 GMT
       Source-Age:
       - '0'
     body:
@@ -13212,5 +13212,5 @@ http_interactions:
         0 - Overview","alternative":"Topic 0 - Overview","URI":null,"identifier":"99-100r1","URL":"https:\/\/portal.ogc.org\/files\/?artifact_id=11496","type":"D-AS","creator":"Cliff
         Kottman","contributor":null,"description":"Introduction and roadmap to the
         Abstract specification.","publisher":"Open Geospatial Consortium","language":"English","license":null,"source":null,"rights":"","isPartOf":null,"date":"1999-06-23","dateAccepted":null,"dateSubmitted":null,"format":null,"hasFormat":null,"extent":null}}'
-  recorded_at: Thu, 26 Aug 2021 10:15:57 GMT
+  recorded_at: Tue, 07 Sep 2021 12:36:06 GMT
 recorded_with: VCR 6.0.0

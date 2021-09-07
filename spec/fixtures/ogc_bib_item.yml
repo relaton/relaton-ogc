@@ -60,4 +60,4 @@ editorialgroup:
     name: Working
     type: WG
     number: 22
-docsubtype: general
+subdoctype: general

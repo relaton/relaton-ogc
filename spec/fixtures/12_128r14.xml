@@ -1,5 +1,5 @@
 <bibdata type="standard">
-  <fetched>2021-03-18</fetched>
+  <fetched>2021-09-07</fetched>
   <title type="title-main" format="text/plain" language="en" script="Latn">OGC® GeoPackage Encoding Standard</title>
   <title type="main" format="text/plain" language="en" script="Latn">OGC® GeoPackage Encoding Standard</title>
   <uri type="obp">https://portal.ogc.org/files/?artifact_id=74225</uri>
@@ -27,7 +27,7 @@
   <abstract format="text/plain" language="en" script="Latn">This OGC® Encoding Standard defines GeoPackages for exchange and GeoPackage SQLite Extensions for direct use of vector geospatial features and / or tile matrix sets of earth images and raster maps at various scales. Direct use means the ability to access and update data in a native storage format without intermediate format translations in an environment (e.g. through an API) that guarantees data model and data set integrity and identical access and update results in response to identical requests from different client applications. GeoPackages are interoperable across all enterprise and personal computing environments, and are particularly useful on mobile devices like cell phones and tablets in communications environments with limited connectivity and bandwidth.</abstract>
   <ext>
     <doctype>standard</doctype>
-    <docsubtype>implementation</docsubtype>
+    <subdoctype>implementation</subdoctype>
     <editorialgroup>
       <committee>technical</committee>
     </editorialgroup>

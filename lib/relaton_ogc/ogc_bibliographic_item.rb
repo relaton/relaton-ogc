@@ -14,17 +14,13 @@ module RelatonOgc
       profile profile-with-extension general
     ].freeze
 
-    # @return [String]
-    attr_reader :docsubtype
-
-    # @param docsubtype [String]
     def initialize(**args)
-      if args[:docsubtype] && !SUBTYPES.include?(args[:docsubtype])
+      if args[:subdoctype] && !SUBTYPES.include?(args[:subdoctype])
         warn "[relaton-ogc] WARNING: invalid document "\
-        "subtype: #{args[:docsubtype]}"
+             "subtype: #{args[:subdoctype]}"
       end
 
-      @docsubtype = args.delete :docsubtype
+      # @docsubtype = args.delete :docsubtype
       # @doctype = args.delete :doctype
       super
     end
@@ -33,15 +29,15 @@ module RelatonOgc
     # @return [RelatonOgc::OgcBibliographicItem]
     def self.from_hash(hash)
       item_hash = ::RelatonOgc::HashConverter.hash_to_bib(hash)
-      new **item_hash
+      new(**item_hash)
     end
 
     # @return [Hash]
-    def to_hash
-      hash = super
-      hash["docsubtype"] = docsubtype if docsubtype
-      hash
-    end
+    # def to_hash
+    #   hash = super
+    #   hash["docsubtype"] = docsubtype if docsubtype
+    #   hash
+    # end
 
     # @param opts [Hash]
     # @option opts [Nokogiri::XML::Builder] :builder XML builder
@@ -50,10 +46,10 @@ module RelatonOgc
     # @option opts [String, Symbol] :lang language
     # @return [String] XML
     def to_xml(**opts)
-      super **opts do |b|
+      super(**opts) do |b|
         b.ext do
           b.doctype doctype if doctype
-          b.docsubtype docsubtype if docsubtype
+          b.subdoctype subdoctype if subdoctype
           editorialgroup&.to_xml b
           ics.each { |i| i.to_xml b }
         end
@@ -62,11 +58,11 @@ module RelatonOgc
 
     # @param prefix [String]
     # @return [String]
-    def to_asciibib(prefix = "")
-      pref = prefix.empty? ? prefix : prefix + "."
-      out = super
-      out += "#{pref}docsubtype:: #{docsubtype}\n" if docsubtype
-      out
-    end
+    # def to_asciibib(prefix = "")
+    #   pref = prefix.empty? ? prefix : prefix + "."
+    #   out = super
+    #   out += "#{pref}docsubtype:: #{docsubtype}\n" if docsubtype
+    #   out
+    # end
   end
 end

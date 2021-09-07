@@ -84,7 +84,7 @@ RSpec.describe RelatonOgc do
       VCR.use_cassette "data" do
         result = RelatonOgc::OgcBibliography.get "16-079", nil, {}
         expect(result.doctype).to eq "standard"
-        expect(result.docsubtype).to eq "implementation"
+        expect(result.subdoctype).to eq "implementation"
       end
     end
 
