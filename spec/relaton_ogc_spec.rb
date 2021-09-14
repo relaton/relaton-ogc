@@ -32,9 +32,9 @@ RSpec.describe RelatonOgc do
         File.write path, xml, encoding: "UTF-8" unless File.exist? path
         expect(xml).to be_equivalent_to File.open(path, "r:UTF-8", &:read)
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
-        # schema = Jing.new "spec/fixtures/isobib.rng"
-        # errors = schema.validate path
-        # expect(errors).to eq []
+        schema = Jing.new "spec/fixtures/isobib.rng"
+        errors = schema.validate path
+        expect(errors).to eq []
       end
     end
   end
