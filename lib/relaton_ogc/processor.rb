@@ -2,11 +2,12 @@ require "relaton/processor"
 
 module RelatonOgc
   class Processor < Relaton::Processor
-    def initialize
+    def initialize # rubocop:disable Lint/MissingSuper
       @short = :relaton_ogc
       @prefix = "OGC"
       @defaultprefix = %r{^OGC\s}
       @idtype = "OGC"
+      @datasets = %w[ogc-naming-authority]
     end
 
     # @param code [String]
@@ -15,6 +16,18 @@ module RelatonOgc
     # @return [RelatonOgc::OgcBibliographicItem]
     def get(code, date = nil, opts = {})
       ::RelatonOgc::OgcBibliography.get(code, date, opts)
+    end
+
+    #
+    # Fetch all the documents from a source
+    #
+    # @param [String] _source source name
+    # @param [Hash] opts
+    # @option opts [String] :output directory to output documents
+    # @option opts [String] :format
+    #
+    def fetch_data(_source, opts)
+      DataFetcher.fetch(**opts)
     end
 
     # @param xml [String]

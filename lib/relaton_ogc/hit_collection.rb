@@ -4,23 +4,25 @@ require "fileutils"
 
 module RelatonOgc
   class HitCollection < RelatonBib::HitCollection
-    ENDPOINT = "https://raw.githubusercontent.com/opengeospatial/"\
-      "NamingAuthority/master/incubation/bibliography/bibliography.json".freeze
+    include DataFetcher::Utils
+
+    # ENDPOINT = "https://raw.githubusercontent.com/opengeospatial/"\
+    #            "NamingAuthority/master/incubation/bibliography/"\
+    #            "bibliography.json".freeze
     DATADIR = File.expand_path ".relaton/ogc/", Dir.home
     DATAFILE = File.expand_path "bibliography.json", DATADIR
-    ETAGFILE = File.expand_path "etag.txt", DATADIR
+    # ETAGFILE = File.expand_path "etag.txt", DATADIR
 
     # @param ref [Strig]
     # @param year [String]
     # @param opts [Hash]
     def initialize(ref, year = nil)
       super
+      @etagfile = File.expand_path "etag.txt", DATADIR
       @array = from_json(ref).sort_by do |hit|
-        begin
-          hit.hit["date"] ? Date.parse(hit.hit["date"]) : Date.new
-        rescue ArgumentError
-          Date.parse "0000-01-01"
-        end
+        hit.hit["date"] ? Date.parse(hit.hit["date"]) : Date.new
+      rescue ArgumentError
+        Date.parse "0000-01-01"
       end.reverse
     end
 
@@ -52,38 +54,13 @@ module RelatonOgc
     #
     # fetch data form server and save it to file.
     #
-    def fetch_data # rubocop:disable Metrics/AbcSize,Metrics/MethodLength
-      h = {}
-      h["If-None-Match"] = etag if etag
-      resp = Faraday.new(ENDPOINT, headers: h).get
-      # return if there aren't any changes since last fetching
-      return if resp.status == 304
-      unless resp.status == 200
-        raise RelatonBib::RequestError, "Could not access #{ENDPOINT}"
-      end
+    def fetch_data
+      json = get_data
+      return unless json
 
       FileUtils.mkdir_p DATADIR unless Dir.exist? DATADIR
-      self.etag = resp[:etag]
-      @data = JSON.parse resp.body
+      @data = json
       File.write DATAFILE, @data.to_json, encoding: "UTF-8"
-    end
-
-    #
-    # Read ETag form file
-    #
-    # @return [String, NilClass]
-    def etag
-      @etag ||= if File.exist? ETAGFILE
-                  File.read ETAGFILE, encoding: "UTF-8"
-                end
-    end
-
-    #
-    # Save ETag to file
-    #
-    # @param tag [String]
-    def etag=(e_tag)
-      File.write ETAGFILE, e_tag, encoding: "UTF-8"
     end
   end
 end

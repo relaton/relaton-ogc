@@ -13,7 +13,7 @@ module RelatonOgc
       "IPR" => { type: "engineering-report" },
       "IS" => { type: "standard", subtype: "implementation" },
       "ISC" => { type: "standard", subtype: "implementation" },
-      "ISx" => { type: "standard", subtype: "extesion" },
+      "ISx" => { type: "standard", subtype: "extension" },
       "Notes" => { type: "other" },
       "ORM" => { type: "reference-model" },
       "PC" => { type: "standard", subtype: "profile" },
@@ -88,7 +88,7 @@ module RelatonOgc
       # @param stage [String]
       # @return [RelatonBib::DocumentStatus, NilClass]
       def fetch_status(stage)
-        stage && RelatonBib::DocunentStatus.new(stage: stage)
+        stage && RelatonBib::DocumentStatus.new(stage: stage)
       end
 
       # @param identifier [String]
@@ -138,6 +138,8 @@ module RelatonOgc
       # @param date [String]
       # @return [Array<RelatonBib::BibliographicDate>]
       def fetch_date(date)
+        return [] unless date
+
         [RelatonBib::BibliographicDate.new(type: "published", on: date)]
       end
     end

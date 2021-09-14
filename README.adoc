@@ -113,6 +113,25 @@ RelatonOgc::OgcBibliographicItem.from_hash hash
 ...
 ----
 
+=== Fetch data
+
+This gem uses the https://raw.githubusercontent.com/opengeospatial/NamingAuthority/master/incubation/bibliography/bibliography.json dataset as a data sources.
+
+The method `RelatonOgc::DataFetcher.fetch(output: "data", format: "yaml")` fetches all the documents from the datast and save them to the `./data` folder in YAML format.
+Arguments:
+
+- `output` - folder to save documents (default './data').
+- `format` - format in which the documents are saved. Possimle formats are: `yaml`, `xml` (default `yaml`).
+
+[source,ruby]
+----
+RelatonOgc::DataFetcher.fetch
+Started at: 2021-09-14 11:21:46 +0200
+[relaton-ogc] WARNING Duplicated documents: 15-113r5, 08-094r1, 10-025r1, 12-128r14, 16-079, 16-007r3, 13-026r8, 12-128r12, 15-078r6, 12-176r7, 09-102r3, 14-095, 14-115, 07-147r2, 12-000, 12-006, 09-025r1, 07-036, 07-110r4, 03-105r1, 06-042, 07-165r1, 12-066, 06-104r4, 11-122r1, 09-000, 04-094, 07-006r1, 06-035r1, 03-006r3, 05-134, 04-021r3, 02-058, 01-009
+Stopped at: 2021-09-14 11:21:48 +0200
+=> nil
+----
+
 == Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

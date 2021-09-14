@@ -12,8 +12,7 @@ RSpec.describe RelatonOgc do
   end
 
   it "fetch hit" do
-    expect(File).to receive(:exist?).with(RelatonOgc::HitCollection::ETAGFILE)
-      .and_return(false).at_most :once
+    allow(File).to receive(:exist?).with(/etag\.txt/).and_return(false)
     expect(File).to receive(:exist?).and_call_original.at_least :once
     VCR.use_cassette "data" do
       hit_collection = RelatonOgc::OgcBibliography.search("OGC 19-025r1")
