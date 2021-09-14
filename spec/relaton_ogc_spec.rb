@@ -14,7 +14,7 @@ RSpec.describe RelatonOgc do
   it "fetch hit" do
     allow(File).to receive(:exist?).with(/etag\.txt/).and_return(false)
     expect(File).to receive(:exist?).and_call_original.at_least :once
-    VCR.use_cassette "data" do
+    VCR.use_cassette "ogc_19_025r1" do
       hit_collection = RelatonOgc::OgcBibliography.search("OGC 19-025r1")
       expect(hit_collection.fetched).to be_falsy
       expect(hit_collection.fetch).to be_instance_of RelatonOgc::HitCollection
@@ -25,7 +25,7 @@ RSpec.describe RelatonOgc do
 
   context "return xml of hit" do
     it "with bibdata root elemen" do
-      VCR.use_cassette "data" do
+      VCR.use_cassette "ogc_19_025r1" do
         hits = RelatonOgc::OgcBibliography.search("OGC 19-025r1")
         path = "spec/fixtures/hit.xml"
         xml = hits.first.to_xml bibdata: true
@@ -41,21 +41,21 @@ RSpec.describe RelatonOgc do
 
   context "get code" do
     it "with edition" do
-      VCR.use_cassette "data" do
+      VCR.use_cassette "ogc_19_025r1" do
         result = RelatonOgc::OgcBibliography.get "OGC 19-025r1", nil, {}
         expect(result).to be_instance_of RelatonOgc::OgcBibliographicItem
       end
     end
 
     it "with year" do
-      VCR.use_cassette "data" do
+      VCR.use_cassette "ogc_19_025r1" do
         result = RelatonOgc::OgcBibliography.get "OGC 19-025r1", "2019", {}
         expect(result).to be_instance_of RelatonOgc::OgcBibliographicItem
       end
     end
 
     it "with wrog year" do
-      VCR.use_cassette "data" do
+      VCR.use_cassette "ogc_19_025r1" do
         expect do
           result = RelatonOgc::OgcBibliography.get "OGC 19-025r1", "2018", {}
           expect(result).to be_nil
@@ -66,7 +66,7 @@ RSpec.describe RelatonOgc do
     end
 
     it "ignore CC types" do
-      VCR.use_cassette "data" do
+      VCR.use_cassette "ogc_12_128r14" do
         path = "spec/fixtures/12_128r14.xml"
         result = RelatonOgc::OgcBibliography.get "12-128r14", nil, {}
         xml = result.to_xml bibdata: true
@@ -80,7 +80,7 @@ RSpec.describe RelatonOgc do
     end
 
     it "returns last date" do
-      VCR.use_cassette "data" do
+      VCR.use_cassette "ogc_16_079" do
         result = RelatonOgc::OgcBibliography.get "16-079", nil, {}
         expect(result.doctype).to eq "standard"
         expect(result.subdoctype).to eq "implementation"
@@ -88,21 +88,21 @@ RSpec.describe RelatonOgc do
     end
 
     it "get OGC 15-043r3" do
-      VCR.use_cassette "data" do
+      VCR.use_cassette "ogc_15_043r3" do
         result = RelatonOgc::OgcBibliography.get "OGC 15-043r3"
         expect(result).to be_instance_of RelatonOgc::OgcBibliographicItem
       end
     end
 
     it "get document with unknown type" do
-      VCR.use_cassette "data" do
-        result = RelatonOgc::OgcBibliography.get "OGC 09-048"
+      VCR.use_cassette "ogc_09_048r5" do
+        result = RelatonOgc::OgcBibliography.get "OGC 09-048r5"
         expect(result.doctype).to eq "other"
       end
     end
 
     it "handle empty reference" do
-      VCR.use_cassette "data" do
+      VCR.use_cassette "empty_ref" do
         result = RelatonOgc::OgcBibliography.get "OGC "
         expect(result).to be_nil
       end

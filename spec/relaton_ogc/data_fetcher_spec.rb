@@ -3,7 +3,9 @@ RSpec.describe "Data fetcher" do
 
   before :each do
     expect(FileUtils).to receive(:mkdir_p).with("data")
-    expect(File).to receive(:exist?).with(/etag\.txt/).and_return false
+    expect(File).to receive(:exist?).with(/etag\.txt/).and_return true
+    expect(File).to receive(:read).with(/etag\.txt/, encoding: "UTF-8").and_return "1234"
+    allow(File).to receive(:read).and_call_original
   end
 
   it "fetch all the documents" do

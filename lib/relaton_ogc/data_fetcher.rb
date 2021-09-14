@@ -67,6 +67,8 @@ module RelatonOgc
       get_data do |etag, json|
         no_errors = true
         json.each do |_, hit|
+          next if hit["type"] == "CC"
+
           bib = Scrapper.parse_page hit
           write_document bib
         rescue StandardError => e

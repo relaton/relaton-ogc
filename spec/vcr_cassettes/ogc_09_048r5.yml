@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-ogc/main/data/09-048R5.yaml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '494'
+      Cache-Control:
+      - max-age=300
+      Content-Security-Policy:
+      - default-src 'none'; style-src 'unsafe-inline'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Etag:
+      - W/"b48a4eeba073b2020be22075b9979304c948800f6a2f3c2c54b1ba50b8f5cadb"
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Github-Request-Id:
+      - C220:10427:D5B5C7:EA98AE:61408AA2
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 14 Sep 2021 11:42:26 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-muc13951-MUC
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1631619746.317140,VS0,VE195
+      Vary:
+      - Authorization,Accept-Encoding,Origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fastly-Request-Id:
+      - a70acdb3a4770ca98c04889fab3d3bedab6b105f
+      Expires:
+      - Tue, 14 Sep 2021 11:47:26 GMT
+      Source-Age:
+      - '0'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        LS0tCmlkOiAnMDktMDQ4cjUnCnRpdGxlOgotIHR5cGU6IHRpdGxlLWludHJvCiAgY29udGVudDogT0dDIE5hbWUgVHlwZSBTcGVjaWZpY2F0aW9uCiAgbGFuZ3VhZ2U6IGVuCiAgc2NyaXB0OiBMYXRuCiAgZm9ybWF0OiB0ZXh0L3BsYWluCi0gdHlwZTogdGl0bGUtbWFpbgogIGNvbnRlbnQ6IGRlZmluaXRpb25zCiAgbGFuZ3VhZ2U6IGVuCiAgc2NyaXB0OiBMYXRuCiAgZm9ybWF0OiB0ZXh0L3BsYWluCi0gdHlwZTogdGl0bGUtcGFydAogIGNvbnRlbnQ6IHBhcnQgMSDigJMgYmFzaWMgbmFtZQogIGxhbmd1YWdlOiBlbgogIHNjcmlwdDogTGF0bgogIGZvcm1hdDogdGV4dC9wbGFpbgotIHR5cGU6IG1haW4KICBjb250ZW50OiBPR0MgTmFtZSBUeXBlIFNwZWNpZmljYXRpb24gLSBkZWZpbml0aW9ucyAtIHBhcnQgMSDigJMgYmFzaWMgbmFtZQogIGxhbmd1YWdlOiBlbgogIHNjcmlwdDogTGF0bgogIGZvcm1hdDogdGV4dC9wbGFpbgpsaW5rOgogIGNvbnRlbnQ6IGh0dHBzOi8vZG9jcy5vcGVuZ2Vvc3BhdGlhbC5vcmcvcG9sLzA5LTA0OHI1Lmh0bWwKICB0eXBlOiBvYnAKdHlwZTogc3RhbmRhcmQKZG9jaWQ6CiAgaWQ6ICcwOS0wNDhyNScKICB0eXBlOiBPR0MKZGF0ZToKICB0eXBlOiBwdWJsaXNoZWQKICB2YWx1ZTogJzIwMTktMTAtMzEnCmNvbnRyaWJ1dG9yOgotIHBlcnNvbjoKICAgIG5hbWU6CiAgICAgIGNvbXBsZXRlbmFtZTogU2ltb24gQ294CiAgcm9sZTogYXV0aG9yCi0gcGVyc29uOgogICAgbmFtZToKICAgICAgY29tcGxldGVuYW1lOiBHb2JlIEhvYm9uYQogIHJvbGU6IGF1dGhvcgotIG9yZ2FuaXphdGlvbjoKICAgIG5hbWU6IE9wZW4gR2Vvc3BhdGlhbCBDb25zb3J0aXVtCiAgcm9sZTogcHVibGlzaGVyCmVkaXRpb246ICc1JwpyZXZkYXRlOiAnMjAxOS0xMC0zMScKbGFuZ3VhZ2U6IGVuCnNjcmlwdDogTGF0bgphYnN0cmFjdDoKICBjb250ZW50OiBUaGlzIGRvY3VtZW50IHNwZWNpZmllcyBhIHJ1bGUgZm9yIGNvbnN0cnVjdGluZyBPR0MgbmFtZXMgdGhhdCBtYXkgYmUgdXNlZAogICAgZm9yIGlkZW50aWZ5aW5nIGRlZmluaXRpb25zLgogIGxhbmd1YWdlOiBlbgogIHNjcmlwdDogTGF0bgogIGZvcm1hdDogdGV4dC9wbGFpbgpmZXRjaGVkOiAnMjAyMS0wOS0xNCcKZG9jdHlwZTogb3RoZXIKZWRpdG9yaWFsZ3JvdXA6CiAgY29tbWl0dGVlOiB0ZWNobmljYWwK
+  recorded_at: Tue, 14 Sep 2021 11:42:26 GMT
+recorded_with: VCR 6.0.0

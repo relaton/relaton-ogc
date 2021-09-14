@@ -1,0 +1,126 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-ogc/main/data/15-043R3.yaml
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '636'
+      Cache-Control:
+      - max-age=300
+      Content-Security-Policy:
+      - default-src 'none'; style-src 'unsafe-inline'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Etag:
+      - W/"0b9539d51d55113c560ce8c683406812d8507242c010fa373b6597cda471dfb9"
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Github-Request-Id:
+      - 6A48:654D:12CF4:195B51:61408ADA
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Tue, 14 Sep 2021 11:43:22 GMT
+      Via:
+      - 1.1 varnish
+      X-Served-By:
+      - cache-muc13983-MUC
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+      X-Timer:
+      - S1631619802.292938,VS0,VE166
+      Vary:
+      - Authorization,Accept-Encoding,Origin
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Fastly-Request-Id:
+      - b8f8355a94ccbbaa98e2c44f8e140935a31e24a5
+      Expires:
+      - Tue, 14 Sep 2021 11:48:22 GMT
+      Source-Age:
+      - '0'
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        ---
+        id: 15-043r3
+        title:
+        - type: title-main
+          content: 'Timeseries Profile of Observations and Measurements '
+          language: en
+          script: Latn
+          format: text/plain
+        - type: main
+          content: 'Timeseries Profile of Observations and Measurements '
+          language: en
+          script: Latn
+          format: text/plain
+        link:
+          content: http://docs.opengeospatial.org/is/15-043r3/15-043r3.html
+          type: obp
+        type: standard
+        docid:
+          id: 15-043r3
+          type: OGC
+        date:
+          type: published
+          value: '2016-09-09'
+        contributor:
+        - person:
+            name:
+              completename: 'James Tomkins '
+          role: author
+        - person:
+            name:
+              completename: 'Dominic Lowe '
+          role: author
+        - organization:
+            name: Open Geospatial Consortium
+          role: publisher
+        edition: '3'
+        revdate: '2016-09-09'
+        language: en
+        script: Latn
+        abstract:
+          content: The OGC Timeseries Profile of Observations and Measurements is a conceptual
+            model for the representation of observations data as timeseries, with the intent
+            of enabling the exchange of such data sets across information systems. This standard
+            does not define an encoding for the conceptual model; however there is an accompanying
+            OGC Standard which defines an XML encoding (OGC TimeseriesML 1.0 - XML Encoding
+            of the Timeseries Profile of Observations and Measurements). Other encodings may
+            be developed in future.
+          language: en
+          script: Latn
+          format: text/plain
+        fetched: '2021-09-14'
+        doctype: standard
+        subdoctype: implementation
+        editorialgroup:
+          committee: technical
+  recorded_at: Tue, 14 Sep 2021 11:43:22 GMT
+recorded_with: VCR 6.0.0
