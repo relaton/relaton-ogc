@@ -41,7 +41,7 @@ require 'relaton_ogc'
 hits = RelatonOgc::OgcBibliography.search("OGC 19-025r1")
 => <RelatonOgc::HitCollection:0x007fcc8e085ba8 @ref=OGC 19-025r1 @fetched=true>
 
-tem = hits[0].fetch
+item = hits[0].fetch
 => #<RelatonOgc::OgcBibliographicItem:0x007fcab3cb4758
 ...
 ----
@@ -99,6 +99,16 @@ RelatonOgc::OgcBibliography.get "OGC 19-025r1", "2019", {}
 RelatonOgc::XMLParser.from_xml File.read('spec/fixtures/ogc_bib_item.xml')
 => #<RelatonOgc::OgcBibliographicItem:0x007fc322ea82c8
 ...
+----
+
+=== Typed links
+
+Each OGC document has `obp` type link.
+
+[source,ruby]
+----
+item.link
+=> [#<RelatonBib::TypedUri:0x00007fc848994568 @content=#<Addressable::URI:0x8e8 URI:https://portal.ogc.org/files/?artifact_id=88037>, @type="obp">]
 ----
 
 === Create bibliographic item from YAML

@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.7.1
+      - Faraday v1.8.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -39,29 +39,29 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 6A48:654D:12CF4:195B51:61408ADA
+      - B53E:10ED1:612E96:695090:615DDE90
       Accept-Ranges:
       - bytes
       Date:
-      - Tue, 14 Sep 2021 11:43:22 GMT
+      - Wed, 06 Oct 2021 17:36:16 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-muc13983-MUC
+      - cache-muc13976-MUC
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1631619802.292938,VS0,VE166
+      - S1633541777.553528,VS0,VE181
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - b8f8355a94ccbbaa98e2c44f8e140935a31e24a5
+      - 71036c5643238a2c2cde957eb423cbbc5c5b8882
       Expires:
-      - Tue, 14 Sep 2021 11:48:22 GMT
+      - Wed, 06 Oct 2021 17:41:16 GMT
       Source-Age:
       - '0'
     body:
@@ -122,5 +122,5 @@ http_interactions:
         subdoctype: implementation
         editorialgroup:
           committee: technical
-  recorded_at: Tue, 14 Sep 2021 11:43:22 GMT
+  recorded_at: Wed, 06 Oct 2021 17:36:16 GMT
 recorded_with: VCR 6.0.0
