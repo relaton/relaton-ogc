@@ -4,42 +4,52 @@ fetched: '2019-11-01'
 title:
 - type: title-main
   content: Development of Spatial Data Infrastructures for Marine Data Management
-  language: en
-  script: Latn
+  language:
+  - en
+  script:
+  - Latn
   format: text/plain
 - type: main
   content: Development of Spatial Data Infrastructures for Marine Data Management
-  language: en
-  script: Latn
+  language:
+  - en
+  script:
+  - Latn
   format: text/plain
 link:
-  type: obp
+- type: obp
   content: https://portal.opengeospatial.org/files/?artifact_id=88037
 type: standard
 docid:
-  id: 19-025r1
+- id: 19-025r1
   type: OGC
 date:
-  type: published
+- type: published
   value: '2019-01-01'
 revdate: '2019-01-01'
 contributor:
 - person:
     name:
       completename: Robert Thomas
-  role: author
+  role:
+  - author
 - person:
     name:
       completename: Terry Idol
-  role: author
+  role:
+  - author
 - organization:
-    name: Open Geospatial Consortium
-  role: publisher
+    name:
+    - Open Geospatial Consortium
+  role:
+  - publisher
 edition: '1'
-language: en
-script: Latn
+language:
+- en
+script:
+- Latn
 abstract:
-  content: "This engineering report presents the results of a concept development
+- content: "This engineering report presents the results of a concept development
     study on a\r\nMarine Spatial Data Infrastructure (SDI), sponsored by the National
     Geospatial-\r\nIntelligence Agency (NGA) - Maritime Safety Office (MSO), on behalf
     of the\r\nInternational Hydrographic Organization (IHO) and the IHO MSDI Working
@@ -47,8 +57,10 @@ abstract:
     of\r\nthis study was to demonstrate to stakeholders the diversity, richness and
     value of a\r\nMarine SDI – specifically data, analysis, interoperability and associated
     IT services\r\n- including web services - in addressing needs of the marine domain."
-  language: en
-  script: Latn
+  language:
+  - en
+  script:
+  - Latn
   format: text/plain
 editorialgroup:
   committee: technical

@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.8.0
+      - Faraday v1.9.3
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -35,33 +35,33 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       X-Github-Request-Id:
-      - E586:370E:2034D8:278F91:615DDE91
+      - 3AB8:7BF6:1E61B25:1F9B14E:61F4204D
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 06 Oct 2021 17:36:17 GMT
+      - Fri, 28 Jan 2022 16:56:45 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-muc13971-MUC
+      - cache-sof1510027-SOF
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1633541777.337771,VS0,VE192
+      - S1643389005.055035,VS0,VE181
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - b960091729207fa558ed839020d0c004cf28d154
+      - 5ceff64dac6858e8070bd100e50eb7a75cc93df4
       Expires:
-      - Wed, 06 Oct 2021 17:41:17 GMT
+      - Fri, 28 Jan 2022 17:01:45 GMT
       Source-Age:
       - '0'
     body:
       encoding: UTF-8
       string: '404: Not Found'
-  recorded_at: Wed, 06 Oct 2021 17:36:17 GMT
+  recorded_at: Fri, 28 Jan 2022 16:56:45 GMT
 recorded_with: VCR 6.0.0
