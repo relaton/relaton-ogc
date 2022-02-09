@@ -70,7 +70,7 @@ module RelatonOgc
       # @param identifier [String]
       # @return [Array<RelatonBib::DocumentIdentifier>]
       def fetch_docid(identifier)
-        [RelatonBib::DocumentIdentifier.new(id: identifier, type: "OGC")]
+        [RelatonBib::DocumentIdentifier.new(id: identifier, type: "OGC", primary: true)]
       end
 
       # @param url [String]

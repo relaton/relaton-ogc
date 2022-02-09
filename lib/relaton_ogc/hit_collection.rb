@@ -17,7 +17,7 @@ module RelatonOgc
     # @param code [Strig]
     # @param year [String]
     # @param opts [Hash]
-    def initialize(code, year = nil)
+    def initialize(code, year = nil) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
       super
       # @etagfile = File.expand_path "etag.txt", DATADIR
       # @array = from_json(ref).sort_by do |hit|
