@@ -1,9 +1,9 @@
 <bibdata type="standard">
-  <fetched>2021-09-14</fetched>
+  <fetched>2022-02-09</fetched>
   <title type="title-main" format="text/plain" language="en" script="Latn">OGC® GeoPackage Encoding Standard</title>
   <title type="main" format="text/plain" language="en" script="Latn">OGC® GeoPackage Encoding Standard</title>
   <uri type="obp">https://portal.ogc.org/files/?artifact_id=74225</uri>
-  <docidentifier type="OGC">12-128r14</docidentifier>
+  <docidentifier type="OGC" primary="true">12-128r14</docidentifier>
   <date type="published">
     <on>2017-08-25</on>
   </date>

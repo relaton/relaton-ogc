@@ -23,6 +23,7 @@ type: standard
 docid:
 - id: 19-025r1
   type: OGC
+  primary: true
 date:
 - type: published
   value: '2019-01-01'

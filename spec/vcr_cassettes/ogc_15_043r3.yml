@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.9.3
+      - Faraday v1.10.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,7 +21,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '648'
+      - '657'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"f8c2cc07ba39300babae7197dd1cb0c8545b22079f3a87a4b5c044dc823c03d1"
+      - W/"8d02a950a142bd2bd6d6a9d082fcaa79ab568704a39d40e84f10215a26c431a1"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,29 +39,29 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - C572:AAA3:37E373:3B9621:620256C6
+      - 2CF4:26C1:1CD0998:1E1E3A5:6252BE52
       Accept-Ranges:
       - bytes
       Date:
-      - Tue, 08 Feb 2022 11:40:54 GMT
+      - Sun, 10 Apr 2022 11:24:03 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-sof1510045-SOF
+      - cache-sof1510048-SOF
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1644320454.400581,VS0,VE208
+      - S1649589843.942028,VS0,VE185
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - 24d1a5e73ed8f53382cc12cbc559978c67a684d8
+      - c0f3684addad8cf9e2406cb13924699e2e29221d
       Expires:
-      - Tue, 08 Feb 2022 11:45:54 GMT
+      - Sun, 10 Apr 2022 11:29:03 GMT
       Source-Age:
       - '0'
     body:
@@ -91,6 +91,7 @@ http_interactions:
         docid:
         - id: 15-043r3
           type: OGC
+          primary: true
         date:
         - type: published
           value: '2016-09-09'
@@ -129,10 +130,10 @@ http_interactions:
           script:
           - Latn
           format: text/plain
-        fetched: '2022-02-07'
+        fetched: '2022-04-09'
         doctype: standard
         subdoctype: implementation
         editorialgroup:
           committee: technical
-  recorded_at: Tue, 08 Feb 2022 11:40:54 GMT
-recorded_with: VCR 6.0.0
+  recorded_at: Sun, 10 Apr 2022 11:24:02 GMT
+recorded_with: VCR 6.1.0
