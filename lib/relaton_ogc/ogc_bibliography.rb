@@ -6,7 +6,7 @@ module RelatonOgc
       def search(text, year = nil, _opts = {})
         code = text.sub(/^OGC\s/, "")
         HitCollection.new code, year
-      rescue Faraday::ConnectionFailed
+      rescue Faraday::ConnectionFailed, Faraday::SSLError
         raise RelatonBib::RequestError, HitCollection::ENDPOINT
       end
 

@@ -25,7 +25,10 @@ module RelatonOgc
       # rescue ArgumentError
       #   Date.parse "0000-01-01"
       # end.reverse
-      resp = Faraday.get "#{ENDPOINT}#{code.upcase.gsub(/[\s:.]/, '_')}.yaml"
+      url = "#{ENDPOINT}#{code.upcase.gsub(/[\s:.]/, '_')}.yaml"
+      resp = Faraday.get url do |req|
+        req.options.timeout = 10
+      end
       @array = case resp.status
                when 200
                  bib = OgcBibliographicItem.from_hash YAML.safe_load(resp.body)
