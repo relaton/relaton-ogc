@@ -44,7 +44,8 @@ contributor:
     - Open Geospatial Consortium
   role:
   - publisher
-edition: '1'
+edition:
+  content: '1'
 language:
 - en
 script:
