@@ -31,17 +31,19 @@ revdate: '2019-01-01'
 contributor:
 - person:
     name:
-      completename: Robert Thomas
+      completename:
+        content: Robert Thomas
   role:
   - author
 - person:
     name:
-      completename: Terry Idol
+      completename:
+        content: Terry Idol
   role:
   - author
 - organization:
     name:
-    - Open Geospatial Consortium
+    - content: Open Geospatial Consortium
   role:
   - publisher
 edition:

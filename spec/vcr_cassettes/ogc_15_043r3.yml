@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.10.0
+      - Faraday v1.10.1
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,7 +21,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '659'
+      - '656'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"2dd5b2e736fc4e0d9c3eccf6bda9bcc5937b72b88e7f68117e9c4454b0cb8aa5"
+      - W/"fdb8ed3436f7b44c0aed87a55e0c0279ed869208ae0811bb6a02bf0135d872c1"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,29 +39,29 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 98A2:6962:506C1:66AFA:62B5D722
+      - 6E4A:A4E5:1D2CD07:1EF97E1:6300F726
       Accept-Ranges:
       - bytes
       Date:
-      - Fri, 24 Jun 2022 15:24:18 GMT
+      - Sat, 20 Aug 2022 15:00:54 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-vie6330-VIE
+      - cache-vie6377-VIE
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1656084258.088275,VS0,VE170
+      - S1661007655.544790,VS0,VE175
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - '0099c7a47cd041001bc1fb1c385cd54565e6c810'
+      - b725dfd2d94df04eecc49f9e6d4642455f6cc0a2
       Expires:
-      - Fri, 24 Jun 2022 15:29:18 GMT
+      - Sat, 20 Aug 2022 15:05:54 GMT
       Source-Age:
       - '0'
     body:
@@ -85,7 +85,7 @@ http_interactions:
           - Latn
           format: text/plain
         link:
-        - content: http://docs.opengeospatial.org/is/15-043r3/15-043r3.html
+        - content: https://docs.ogc.org/is/15-043r3/15-043r3.html
           type: obp
         type: standard
         docid:
@@ -111,7 +111,8 @@ http_interactions:
             - Open Geospatial Consortium
           role:
           - publisher
-        edition: '3'
+        edition:
+          content: '3'
         revdate: '2016-09-09'
         language:
         - en
@@ -130,10 +131,10 @@ http_interactions:
           script:
           - Latn
           format: text/plain
-        fetched: '2022-05-29'
+        fetched: '2022-08-20'
         doctype: standard
         subdoctype: implementation
         editorialgroup:
           committee: technical
-  recorded_at: Fri, 24 Jun 2022 15:24:18 GMT
+  recorded_at: Sat, 20 Aug 2022 15:00:54 GMT
 recorded_with: VCR 6.1.0
