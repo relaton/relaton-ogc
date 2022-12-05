@@ -1,5 +1,6 @@
 ---
 id: 19-025r1
+schema-version: v1.2.1
 fetched: '2019-11-01'
 title:
 - type: title-main
@@ -34,18 +35,18 @@ contributor:
       completename:
         content: Robert Thomas
   role:
-  - author
+  - type: author
 - person:
     name:
       completename:
         content: Terry Idol
   role:
-  - author
+  - type: author
 - organization:
     name:
     - content: Open Geospatial Consortium
   role:
-  - publisher
+  - type: publisher
 edition:
   content: '1'
 language:
@@ -77,3 +78,5 @@ editorialgroup:
     type: WG
     number: 22
 subdoctype: general
+ext:
+  schema-version: v1.0.1

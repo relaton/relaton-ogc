@@ -6,9 +6,9 @@ RSpec.describe RelatonOgc::XMLParser do
     xml = File.read path, encoding: "UTF-8"
     item = RelatonOgc::XMLParser.from_xml xml
     expect(item.to_xml(bibdata: true)).to be_equivalent_to xml
-    # schema = Jing.new "spec/fixtures/isobib.rng"
-    # errors = schema.validate path
-    # expect(errors).to eq []
+    schema = Jing.new "grammars/relaton-ogc-compile.rng"
+    errors = schema.validate path
+    expect(errors).to eq []
   end
 
   it "warn if XML doesn't have bibitem or bibdata element" do

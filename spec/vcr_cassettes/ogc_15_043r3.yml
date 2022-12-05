@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v1.10.1
+      - Faraday v1.10.2
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,7 +21,7 @@ http_interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '656'
+      - '659'
       Cache-Control:
       - max-age=300
       Content-Security-Policy:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"fdb8ed3436f7b44c0aed87a55e0c0279ed869208ae0811bb6a02bf0135d872c1"
+      - W/"2c9a1bdc12cd1a4e2a28c8ac6781fee2946997fd6b0ddc7cba8db6073a171831"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,29 +39,29 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 6E4A:A4E5:1D2CD07:1EF97E1:6300F726
+      - 7D5E:2AD8:1E3A61:2F4349:6387EDFA
       Accept-Ranges:
       - bytes
       Date:
-      - Sat, 20 Aug 2022 15:00:54 GMT
+      - Wed, 30 Nov 2022 23:57:46 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-vie6377-VIE
+      - cache-atl18438-ATL
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1661007655.544790,VS0,VE175
+      - S1669852667.594923,VS0,VE94
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - b725dfd2d94df04eecc49f9e6d4642455f6cc0a2
+      - 3f862abde83e25649cf233d2117ea3f33f3d1019
       Expires:
-      - Sat, 20 Aug 2022 15:05:54 GMT
+      - Thu, 01 Dec 2022 00:02:46 GMT
       Source-Age:
       - '0'
     body:
@@ -70,20 +70,20 @@ http_interactions:
         ---
         id: 15-043r3
         title:
-        - type: title-main
-          content: 'Timeseries Profile of Observations and Measurements '
+        - content: 'Timeseries Profile of Observations and Measurements '
           language:
           - en
           script:
           - Latn
           format: text/plain
-        - type: main
-          content: 'Timeseries Profile of Observations and Measurements '
+          type: title-main
+        - content: 'Timeseries Profile of Observations and Measurements '
           language:
           - en
           script:
           - Latn
           format: text/plain
+          type: main
         link:
         - content: https://docs.ogc.org/is/15-043r3/15-043r3.html
           type: obp
@@ -98,19 +98,21 @@ http_interactions:
         contributor:
         - person:
             name:
-              completename: 'James Tomkins '
+              completename:
+                content: 'James Tomkins '
           role:
-          - author
+          - type: author
         - person:
             name:
-              completename: 'Dominic Lowe '
+              completename:
+                content: 'Dominic Lowe '
           role:
-          - author
+          - type: author
         - organization:
             name:
-            - Open Geospatial Consortium
+            - content: Open Geospatial Consortium
           role:
-          - publisher
+          - type: publisher
         edition:
           content: '3'
         revdate: '2016-09-09'
@@ -131,10 +133,10 @@ http_interactions:
           script:
           - Latn
           format: text/plain
-        fetched: '2022-08-20'
+        fetched: '2022-11-30'
         doctype: standard
         subdoctype: implementation
         editorialgroup:
           committee: technical
-  recorded_at: Sat, 20 Aug 2022 15:00:54 GMT
+  recorded_at: Wed, 30 Nov 2022 23:57:46 GMT
 recorded_with: VCR 6.1.0

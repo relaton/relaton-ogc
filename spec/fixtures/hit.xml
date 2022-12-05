@@ -1,5 +1,5 @@
-<bibdata type="standard">
-  <fetched>2022-02-09</fetched>
+<bibdata type="standard" schema-version="v1.2.1">
+  <fetched>2022-11-30</fetched>
   <title type="title-main" format="text/plain" language="en" script="Latn">Development of Spatial Data Infrastructures for Marine Data Management</title>
   <title type="main" format="text/plain" language="en" script="Latn">Development of Spatial Data Infrastructures for Marine Data Management</title>
   <uri type="obp">https://portal.ogc.org/files/?artifact_id=88037</uri>
@@ -40,7 +40,7 @@ International Hydrographic Organization (IHO) and the IHO MSDI Working Group
 this study was to demonstrate to stakeholders the diversity, richness and value of a
 Marine SDI – specifically data, analysis, interoperability and associated IT services
 - including web services - in addressing needs of the marine domain.</abstract>
-  <ext>
+  <ext schema-version="v1.0.1">
     <doctype>engineering-report</doctype>
     <editorialgroup>
       <committee>technical</committee>

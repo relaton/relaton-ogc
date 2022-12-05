@@ -25,6 +25,15 @@ module RelatonOgc
       super
     end
 
+    #
+    # Fetches flavof schema version
+    #
+    # @return [String] schema version
+    #
+    def ext_schema
+      @ext_schema ||= schema_versions["relaton-model-ogc"]
+    end
+
     # @param hash [Hash]
     # @return [RelatonOgc::OgcBibliographicItem]
     def self.from_hash(hash)
@@ -45,14 +54,15 @@ module RelatonOgc
     # @option opts [Symbol, NilClass] :date_format (:short), :full
     # @option opts [String, Symbol] :lang language
     # @return [String] XML
-    def to_xml(**opts)
+    def to_xml(**opts) # rubocop:disable Metrics/AbcSize
       super(**opts) do |b|
-        b.ext do
+        ext = b.ext do
           b.doctype doctype if doctype
           b.subdoctype subdoctype if subdoctype
           editorialgroup&.to_xml b
           ics.each { |i| i.to_xml b }
         end
+        ext["schema-version"] = ext_schema unless opts[:embedded]
       end
     end
 

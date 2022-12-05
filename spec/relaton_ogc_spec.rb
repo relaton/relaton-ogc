@@ -1,5 +1,3 @@
-require "jing"
-
 RSpec.describe RelatonOgc do
   it "has a version number" do
     expect(RelatonOgc::VERSION).not_to be nil
@@ -33,7 +31,7 @@ RSpec.describe RelatonOgc do
         xml2 = xml.gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         expect(xml2).to be_equivalent_to File.open(path, "r:UTF-8", &:read)
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
-        schema = Jing.new "spec/fixtures/isobib.rng"
+        schema = Jing.new "grammars/relaton-ogc-compile.rng"
         errors = schema.validate path
         expect(errors).to eq []
       end
@@ -75,7 +73,7 @@ RSpec.describe RelatonOgc do
         xml2 = xml.sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         expect(xml2).to be_equivalent_to File.read(path, encoding: "UTF-8")
           .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
-        schema = Jing.new "spec/fixtures/isobib.rng"
+        schema = Jing.new "grammars/relaton-ogc-compile.rng"
         errors = schema.validate path
         expect(errors).to eq []
       end

@@ -50,31 +50,27 @@ item = hits[0].fetch
 [source,ruby]
 ----
 item.to_xml
-=> "<bibitem id="19-025r1" type="standard">
+=> "<bibitem id="19-025r1" type="standard" schema-version="v1.2.1">
+      <fetched>2022-12-04</fetched>
       <title type="title-main" format="text/plain" language="en" script="Latn">Development of Spatial Data Infrastructures for Marine Data Management</title>
       <title type="main" format="text/plain" language="en" script="Latn">Development of Spatial Data Infrastructures for Marine Data Management</title>
-      <uri type="obp">https://portal.opengeospatial.org/files/?artifact_id=88037</uri>
-      <docidentifier type="OGC">19-025r1</docidentifier>
-      <date type="published">
-        <on>2019</on>
-      </date>
+      <uri type="obp">https://portal.ogc.org/files/?artifact_id=88037</uri>
+      <docidentifier type="OGC" primary="true">19-025r1</docidentifier>
       ...
     </bibitem>"
 ----
-With argument `bibdata: true` it ouputs XML wrapped by `bibdata` element and adds flavour `ext` element.
+With argument `bibdata: true` it outputs XML wrapped by `bibdata` element and adds flavor `ext` element.
 [source,ruby]
 ----
 item.to_xml bibdata: true
-=> "<bibdata type="standard">
+=> "<bibdata type="standard" schema-version="v1.2.1">
+      <fetched>2022-12-04</fetched>
       <title type="title-main" format="text/plain" language="en" script="Latn">Development of Spatial Data Infrastructures for Marine Data Management</title>
       <title type="main" format="text/plain" language="en" script="Latn">Development of Spatial Data Infrastructures for Marine Data Management</title>
-      <uri type="obp">https://portal.opengeospatial.org/files/?artifact_id=88037</uri>
-      <docidentifier type="OGC">19-025r1</docidentifier>
-      <date type="published\">
-        <on>2019</on>
-      </date>
+      <uri type="obp">https://portal.ogc.org/files/?artifact_id=88037</uri>
+      <docidentifier type="OGC" primary="true">19-025r1</docidentifier>
       ...
-      <ext>
+      <ext schema-version="v1.0.1">
         <doctype>engineering-report</doctype>
         <editorialgroup>
           <committee>technical</committee>
@@ -96,8 +92,8 @@ RelatonOgc::OgcBibliography.get "OGC 19-025r1", "2019", {}
 === Create bibliographic item from XML
 [source,ruby]
 ----
-RelatonOgc::XMLParser.from_xml File.read('spec/fixtures/ogc_bib_item.xml')
-=> #<RelatonOgc::OgcBibliographicItem:0x007fc322ea82c8
+RelatonOgc::XMLParser.from_xml File.read('spec/fixtures/12_128r14.xml')
+=> #<RelatonOgc::OgcBibliographicItem:0x00007fd2b1078718
 ...
 ----
 
@@ -125,13 +121,13 @@ RelatonOgc::OgcBibliographicItem.from_hash hash
 
 === Fetch data
 
-This gem uses the https://raw.githubusercontent.com/opengeospatial/NamingAuthority/master/incubation/bibliography/bibliography.json dataset as a data sources.
+This gem uses the https://raw.githubusercontent.com/opengeospatial/NamingAuthority/master/incubation/bibliography/bibliography.json dataset as a data source.
 
-The method `RelatonOgc::DataFetcher.fetch(output: "data", format: "yaml")` fetches all the documents from the datast and save them to the `./data` folder in YAML format.
+The method `RelatonOgc::DataFetcher.fetch(output: "data", format: "yaml")` fetches all the documents from the dataset and saves them to the `./data` folder in YAML format.
 Arguments:
 
 - `output` - folder to save documents (default './data').
-- `format` - format in which the documents are saved. Possimle formats are: `yaml`, `xml` (default `yaml`).
+- `format` - the format in which the documents are saved. Possible formats are: `yaml`, `xml` (default `yaml`).
 
 [source,ruby]
 ----
