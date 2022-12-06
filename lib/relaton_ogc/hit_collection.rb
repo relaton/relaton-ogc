@@ -31,7 +31,9 @@ module RelatonOgc
       end
       @array = case resp.status
                when 200
-                 bib = OgcBibliographicItem.from_hash YAML.safe_load(resp.body)
+                 hash = YAML.safe_load(resp.body)
+                 hash["fetched"] = Date.today.to_s
+                 bib = OgcBibliographicItem.from_hash hash
                  [Hit.new(bib, self)]
                else []
                end

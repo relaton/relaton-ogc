@@ -68,11 +68,11 @@ module RelatonOgc
       # @param missed_years [Array<Strig>]
       def fetch_ref_err(code, year, missed_years)
         id = year ? "#{code} year #{year}" : code
-        warn "[relaton-ogc] WARNING: no match found online for #{id}. "\
-          "The code must be exactly like it is on the standards website."
+        warn "[relaton-ogc] WARNING: no match found online for #{id}. " \
+             "The code must be exactly like it is on the standards website."
         unless missed_years.empty?
-          warn "[relaton-ogc] (There was no match for #{year}, though there were matches "\
-            "found for #{missed_years.join(', ')}.)"
+          warn "[relaton-ogc] (There was no match for #{year}, though there " \
+               "were matches found for #{missed_years.join(', ')}.)"
         end
         nil
       end
