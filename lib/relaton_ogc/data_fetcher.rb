@@ -72,7 +72,7 @@ module RelatonOgc
       get_data do |etag, json|
         no_errors = true
         json.each { |_, hit| fetch_doc(hit) || no_errors = false }
-        warn "[relaton-ogc] WARNING Duplicated documents: #{@dupids.join(', ')}" if @dupids.any?
+        warn "[relaton-ogc] WARNING Duplicated documents: #{@dupids.to_a.join(', ')}" if @dupids.any?
         self.etag = etag if no_errors
         index.save
       end
