@@ -85,7 +85,7 @@ module RelatonOgc
       end
 
       # @param stage [String]
-      # @return [RelatonBib::DocumentStatus, NilClass]
+      # @return [RelatonBib::DocumentStatus, nil]
       def fetch_status(stage)
         stage && RelatonBib::DocumentStatus.new(stage: stage)
       end
@@ -134,12 +134,14 @@ module RelatonOgc
         )
       end
 
-      # @param date [String]
+      # @param date [String, nil]
       # @return [Array<RelatonBib::BibliographicDate>]
       def fetch_date(date)
         return [] unless date
 
         [RelatonBib::BibliographicDate.new(type: "published", on: date)]
+      rescue Date::Error
+        []
       end
     end
   end

@@ -1,9 +1,9 @@
+# frozen_string_literal: true
+
 module RelatonOgc
   class DataFetcher
     module Utils
-      ENDPOINT = "https://raw.githubusercontent.com/opengeospatial/"\
-                 "NamingAuthority/master/incubation/bibliography/"\
-                 "bibliography.json".freeze
+      ENDPOINT = "https://raw.githubusercontent.com/opengeospatial/NamingAuthority/master/definitions/docs/docs.json"
 
       def get_data # rubocop:disable Metrics/AbcSize
         h = {}
@@ -43,43 +43,52 @@ module RelatonOgc
     # Create DataFetcher instance
     #
     # @param [String] output directory to save the documents
-    # @param [String] format output format "yaml" or "xmo"
+    # @param [String] format output format "yaml", "xml", or "bibxml"
     #
     def initialize(output, format)
       @output = output
       @etagfile = File.join output, "etag.txt"
       @format = format
+      @ext = format.sub "bib", ""
       @docids = []
-      @dupids = []
+      @dupids = Set.new
+    end
+
+    def index
+      @index ||= Relaton::Index.find_or_create :ogc, file: "index-v1.yaml"
     end
 
     def self.fetch(output: "data", format: "yaml")
       t1 = Time.now
       puts "Started at: #{t1}"
-      FileUtils.mkdir_p output unless Dir.exist? output
+      FileUtils.mkdir_p output
       new(output, format).fetch
       t2 = Time.now
       puts "Stopped at: #{t2}"
       puts "Done in: #{(t2 - t1).round} sec."
     end
 
-    def fetch # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
+    def fetch
       get_data do |etag, json|
         no_errors = true
-        json.each do |_, hit|
-          next if hit["type"] == "CC"
-
-          bib = Scrapper.parse_page hit
-          write_document bib
-        rescue StandardError => e
-          no_errors = false
-          warn "Fetching document: #{hit['identifier']}"
-          warn "#{e.class} #{e.message}"
-          warn e.backtrace
-        end
-        warn "[relaton-ogc] WARNING Duplicated documents: #{@dupids.uniq.join(', ')}" if @dupids.any?
+        json.each { |_, hit| fetch_doc(hit) || no_errors = false }
+        warn "[relaton-ogc] WARNING Duplicated documents: #{@dupids.join(', ')}" if @dupids.any?
         self.etag = etag if no_errors
+        index.save
       end
+    end
+
+    def fetch_doc(hit)
+      return if hit["type"] == "CC"
+
+      bib = Scrapper.parse_page hit
+      write_document bib
+      true
+    rescue StandardError => e
+      warn "Fetching document: #{hit['identifier']}"
+      warn "#{e.class} #{e.message}"
+      warn e.backtrace
+      false
     end
 
     def write_document(bib) # rubocop:disable Metrics/AbcSize
@@ -89,10 +98,22 @@ module RelatonOgc
       end
 
       @docids << bib.docidentifier[0].id
+      file = file_name bib
+      index.add_or_update bib.docidentifier[0].id, file
+      File.write file, content(bib), encoding: "UTF-8"
+    end
+
+    def file_name(bib)
       name = bib.docidentifier[0].id.upcase.gsub(/[\s:.]/, "_")
-      file = "#{@output}/#{name}.#{@format}"
-      content = @format == "xml" ? bib.to_xml(bibdata: true) : bib.to_hash.to_yaml
-      File.write file, content, encoding: "UTF-8"
+      "#{@output}/#{name}.#{@ext}"
+    end
+
+    def content(bib)
+      case @format
+      when "xml" then bib.to_xml bibdata: true
+      when "yaml" then bib.to_hash.to_yaml
+      when "bibxml" then bib.to_bibxml
+      end
     end
   end
 end
