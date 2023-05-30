@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: get
-    uri: https://raw.githubusercontent.com/relaton/relaton-data-ogc/main/data/.yaml
+    uri: https://raw.githubusercontent.com/relaton/relaton-data-ogc/main/data/00-028.yaml
     body:
       encoding: US-ASCII
-      string: ''
+      base64_string: ''
     headers:
       User-Agent:
       - Faraday v2.7.4
@@ -15,15 +15,21 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 200
+      message: OK
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '14'
+      - '1170'
+      Cache-Control:
+      - max-age=300
       Content-Security-Policy:
       - default-src 'none'; style-src 'unsafe-inline'; sandbox
+      Content-Type:
+      - text/plain; charset=utf-8
+      Etag:
+      - W/"5b1951ffff9cba3fe33e48056858aaf30c503c0b05bc759ba3a459dd0d74df01"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -32,36 +38,60 @@ http_interactions:
       - deny
       X-Xss-Protection:
       - 1; mode=block
-      Content-Type:
-      - text/plain; charset=utf-8
       X-Github-Request-Id:
-      - 2492:29A6:36783E:42CF9A:6472B9B8
+      - 0C5A:7B6F:4D2C9C:5B970D:64762832
       Accept-Ranges:
       - bytes
       Date:
-      - Sun, 28 May 2023 02:17:28 GMT
+      - Tue, 30 May 2023 16:45:38 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-atl18440-ATL
+      - cache-atl18428-ATL
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1685240249.667900,VS0,VE88
+      - S1685465138.098853,VS0,VE95
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - e41d01a50de239fed2583eb13d16a2acca7b8a88
+      - 59c92ad77a66e182516e91355b2854a4204b415a
       Expires:
-      - Sun, 28 May 2023 02:22:28 GMT
+      - Tue, 30 May 2023 16:50:38 GMT
       Source-Age:
       - '0'
     body:
-      encoding: UTF-8
-      string: '404: Not Found'
-  recorded_at: Sun, 28 May 2023 02:17:28 GMT
+      encoding: ASCII-8BIT
+      base64_string: |
+        LS0tCnNjaGVtYS12ZXJzaW9uOiB2MS4yLjMKaWQ6IDAwLTAyOAp0aXRsZToK
+        LSBjb250ZW50OiBXZWIgTWFwIFNlcnZpY2UKICBsYW5ndWFnZToKICAtIGVu
+        CiAgc2NyaXB0OgogIC0gTGF0bgogIGZvcm1hdDogdGV4dC9wbGFpbgogIHR5
+        cGU6IHRpdGxlLW1haW4KLSBjb250ZW50OiBXZWIgTWFwIFNlcnZpY2UKICBs
+        YW5ndWFnZToKICAtIGVuCiAgc2NyaXB0OgogIC0gTGF0bgogIGZvcm1hdDog
+        dGV4dC9wbGFpbgogIHR5cGU6IG1haW4KbGluazoKLSBjb250ZW50OiBodHRw
+        czovL3BvcnRhbC5vZ2Mub3JnL2ZpbGVzLz9hcnRpZmFjdF9pZD03MTk2CiAg
+        dHlwZTogb2JwCnR5cGU6IHN0YW5kYXJkCmRvY2lkOgotIGlkOiAwMC0wMjgK
+        ICB0eXBlOiBPR0MKICBwcmltYXJ5OiB0cnVlCmRhdGU6Ci0gdHlwZTogcHVi
+        bGlzaGVkCiAgdmFsdWU6ICcyMDAwLTA0LTE5Jwpjb250cmlidXRvcjoKLSBw
+        ZXJzb246CiAgICBuYW1lOgogICAgICBjb21wbGV0ZW5hbWU6CiAgICAgICAg
+        Y29udGVudDogQWxsYW4gRG95bGUKICByb2xlOgogIC0gdHlwZTogYXV0aG9y
+        Ci0gb3JnYW5pemF0aW9uOgogICAgbmFtZToKICAgIC0gY29udGVudDogT3Bl
+        biBHZW9zcGF0aWFsIENvbnNvcnRpdW0KICByb2xlOgogIC0gdHlwZTogcHVi
+        bGlzaGVyCnJldmRhdGU6ICcyMDAwLTA0LTE5JwpsYW5ndWFnZToKLSBlbgpz
+        Y3JpcHQ6Ci0gTGF0bgphYnN0cmFjdDoKLSBjb250ZW50OiAnUHJvdmlkZXMg
+        Zm91ciBwcm90b2NvbHMgKEdldENhcGFiaWxpdGllcywgR2V0TWFwLCBHZXRG
+        ZWF0dXJlSW5mbyBhbmQgRGVzY3JpYmVMYXllcikKICAgIGluIHN1cHBvcnQg
+        b2YgdGhlIGNyZWF0aW9uIGFuZCBkaXNwbGF5IG9mIHJlZ2lzdGVyZWQgYW5k
+        IHN1cGVyaW1wb3NlZCBtYXAtbGlrZQogICAgdmlld3Mgb2YgaW5mb3JtYXRp
+        b24gdGhhdCBjb21lIHNpbXVsdGFuZW91c2x5IGZyb20gbXVsdGlwbGUgc291
+        cmNlcyB0aGF0IGFyZSBib3RoCiAgICByZW1vdGUgYW5kIGhldGVyb2dlbmVv
+        dXMuICAnCiAgbGFuZ3VhZ2U6CiAgLSBlbgogIHNjcmlwdDoKICAtIExhdG4K
+        ICBmb3JtYXQ6IHRleHQvcGxhaW4KZG9jdHlwZTogc3RhbmRhcmQKc3ViZG9j
+        dHlwZTogaW1wbGVtZW50YXRpb24KZWRpdG9yaWFsZ3JvdXA6CiAgY29tbWl0
+        dGVlOiB0ZWNobmljYWwKZXh0OgogIHNjaGVtYS12ZXJzaW9uOiB2MS4wLjEK
+  recorded_at: Tue, 30 May 2023 16:45:38 GMT
 recorded_with: VCR 6.1.0

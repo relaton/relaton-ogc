@@ -5,7 +5,7 @@ http_interactions:
     uri: https://raw.githubusercontent.com/relaton/relaton-data-ogc/main/data/15-043R3.yaml
     body:
       encoding: US-ASCII
-      string: ''
+      base64_string: ''
     headers:
       User-Agent:
       - Faraday v2.7.4
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"a4cdd91b490e888634dc8b5a0d0857a28f59223e384c73928440b5d0b5fef040"
+      - W/"89dabfc96ae6649eda5b94bd5bcf89e52bf5ce127c56e38f0e1ee02d6cc34298"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,106 +39,70 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 2492:29A6:36782D:42CF86:6472B9B8
+      - 6612:1146:470293:556C10:64762831
       Accept-Ranges:
       - bytes
       Date:
-      - Sun, 28 May 2023 02:17:28 GMT
+      - Tue, 30 May 2023 16:45:37 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-atl18460-ATL
+      - cache-atl18448-ATL
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1685240248.216580,VS0,VE89
+      - S1685465138.711514,VS0,VE91
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
       X-Fastly-Request-Id:
-      - bde0ea7a61befd6c5f8f390138cb373a73d65c0f
+      - 7f0fd96dc616a8a165f0fa9dfe5632454cd15dc1
       Expires:
-      - Sun, 28 May 2023 02:22:28 GMT
+      - Tue, 30 May 2023 16:50:37 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
-      string: |
-        ---
-        schema-version: v1.2.1
-        id: 15-043r3
-        title:
-        - content: 'Timeseries Profile of Observations and Measurements '
-          language:
-          - en
-          script:
-          - Latn
-          format: text/plain
-          type: title-main
-        - content: 'Timeseries Profile of Observations and Measurements '
-          language:
-          - en
-          script:
-          - Latn
-          format: text/plain
-          type: main
-        link:
-        - content: https://docs.ogc.org/is/15-043r3/15-043r3.html
-          type: obp
-        type: standard
-        docid:
-        - id: 15-043r3
-          type: OGC
-          primary: true
-        date:
-        - type: published
-          value: '2016-09-09'
-        contributor:
-        - person:
-            name:
-              completename:
-                content: 'James Tomkins '
-          role:
-          - type: author
-        - person:
-            name:
-              completename:
-                content: 'Dominic Lowe '
-          role:
-          - type: author
-        - organization:
-            name:
-            - content: Open Geospatial Consortium
-          role:
-          - type: publisher
-        edition:
-          content: '3'
-        revdate: '2016-09-09'
-        language:
-        - en
-        script:
-        - Latn
-        abstract:
-        - content: The OGC Timeseries Profile of Observations and Measurements is a conceptual
-            model for the representation of observations data as timeseries, with the intent
-            of enabling the exchange of such data sets across information systems. This standard
-            does not define an encoding for the conceptual model; however there is an accompanying
-            OGC Standard which defines an XML encoding (OGC TimeseriesML 1.0 - XML Encoding
-            of the Timeseries Profile of Observations and Measurements). Other encodings may
-            be developed in future.
-          language:
-          - en
-          script:
-          - Latn
-          format: text/plain
-        doctype: standard
-        subdoctype: implementation
-        editorialgroup:
-          committee: technical
-        ext:
-          schema-version: v1.0.1
-  recorded_at: Sun, 28 May 2023 02:17:28 GMT
+      base64_string: |
+        LS0tCnNjaGVtYS12ZXJzaW9uOiB2MS4yLjMKaWQ6IDE1LTA0M3IzCnRpdGxl
+        OgotIGNvbnRlbnQ6ICdUaW1lc2VyaWVzIFByb2ZpbGUgb2YgT2JzZXJ2YXRp
+        b25zIGFuZCBNZWFzdXJlbWVudHMgJwogIGxhbmd1YWdlOgogIC0gZW4KICBz
+        Y3JpcHQ6CiAgLSBMYXRuCiAgZm9ybWF0OiB0ZXh0L3BsYWluCiAgdHlwZTog
+        dGl0bGUtbWFpbgotIGNvbnRlbnQ6ICdUaW1lc2VyaWVzIFByb2ZpbGUgb2Yg
+        T2JzZXJ2YXRpb25zIGFuZCBNZWFzdXJlbWVudHMgJwogIGxhbmd1YWdlOgog
+        IC0gZW4KICBzY3JpcHQ6CiAgLSBMYXRuCiAgZm9ybWF0OiB0ZXh0L3BsYWlu
+        CiAgdHlwZTogbWFpbgpsaW5rOgotIGNvbnRlbnQ6IGh0dHBzOi8vZG9jcy5v
+        Z2Mub3JnL2lzLzE1LTA0M3IzLzE1LTA0M3IzLmh0bWwKICB0eXBlOiBvYnAK
+        dHlwZTogc3RhbmRhcmQKZG9jaWQ6Ci0gaWQ6IDE1LTA0M3IzCiAgdHlwZTog
+        T0dDCiAgcHJpbWFyeTogdHJ1ZQpkYXRlOgotIHR5cGU6IHB1Ymxpc2hlZAog
+        IHZhbHVlOiAnMjAxNi0wOS0wOScKY29udHJpYnV0b3I6Ci0gcGVyc29uOgog
+        ICAgbmFtZToKICAgICAgY29tcGxldGVuYW1lOgogICAgICAgIGNvbnRlbnQ6
+        ICdKYW1lcyBUb21raW5zICcKICByb2xlOgogIC0gdHlwZTogYXV0aG9yCi0g
+        cGVyc29uOgogICAgbmFtZToKICAgICAgY29tcGxldGVuYW1lOgogICAgICAg
+        IGNvbnRlbnQ6ICdEb21pbmljIExvd2UgJwogIHJvbGU6CiAgLSB0eXBlOiBh
+        dXRob3IKLSBvcmdhbml6YXRpb246CiAgICBuYW1lOgogICAgLSBjb250ZW50
+        OiBPcGVuIEdlb3NwYXRpYWwgQ29uc29ydGl1bQogIHJvbGU6CiAgLSB0eXBl
+        OiBwdWJsaXNoZXIKZWRpdGlvbjoKICBjb250ZW50OiAnMycKcmV2ZGF0ZTog
+        JzIwMTYtMDktMDknCmxhbmd1YWdlOgotIGVuCnNjcmlwdDoKLSBMYXRuCmFi
+        c3RyYWN0OgotIGNvbnRlbnQ6IFRoZSBPR0MgVGltZXNlcmllcyBQcm9maWxl
+        IG9mIE9ic2VydmF0aW9ucyBhbmQgTWVhc3VyZW1lbnRzIGlzIGEgY29uY2Vw
+        dHVhbAogICAgbW9kZWwgZm9yIHRoZSByZXByZXNlbnRhdGlvbiBvZiBvYnNl
+        cnZhdGlvbnMgZGF0YSBhcyB0aW1lc2VyaWVzLCB3aXRoIHRoZSBpbnRlbnQK
+        ICAgIG9mIGVuYWJsaW5nIHRoZSBleGNoYW5nZSBvZiBzdWNoIGRhdGEgc2V0
+        cyBhY3Jvc3MgaW5mb3JtYXRpb24gc3lzdGVtcy4gVGhpcyBzdGFuZGFyZAog
+        ICAgZG9lcyBub3QgZGVmaW5lIGFuIGVuY29kaW5nIGZvciB0aGUgY29uY2Vw
+        dHVhbCBtb2RlbDsgaG93ZXZlciB0aGVyZSBpcyBhbiBhY2NvbXBhbnlpbmcK
+        ICAgIE9HQyBTdGFuZGFyZCB3aGljaCBkZWZpbmVzIGFuIFhNTCBlbmNvZGlu
+        ZyAoT0dDIFRpbWVzZXJpZXNNTCAxLjAgLSBYTUwgRW5jb2RpbmcKICAgIG9m
+        IHRoZSBUaW1lc2VyaWVzIFByb2ZpbGUgb2YgT2JzZXJ2YXRpb25zIGFuZCBN
+        ZWFzdXJlbWVudHMpLiBPdGhlciBlbmNvZGluZ3MgbWF5CiAgICBiZSBkZXZl
+        bG9wZWQgaW4gZnV0dXJlLgogIGxhbmd1YWdlOgogIC0gZW4KICBzY3JpcHQ6
+        CiAgLSBMYXRuCiAgZm9ybWF0OiB0ZXh0L3BsYWluCmRvY3R5cGU6IHN0YW5k
+        YXJkCnN1YmRvY3R5cGU6IGltcGxlbWVudGF0aW9uCmVkaXRvcmlhbGdyb3Vw
+        OgogIGNvbW1pdHRlZTogdGVjaG5pY2FsCmV4dDoKICBzY2hlbWEtdmVyc2lv
+        bjogdjEuMC4xCg==
+  recorded_at: Tue, 30 May 2023 16:45:37 GMT
 recorded_with: VCR 6.1.0

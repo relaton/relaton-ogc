@@ -47,5 +47,12 @@ module RelatonOgc
     def grammar_hash
       @grammar_hash ||= ::RelatonOgc.grammar_hash
     end
+
+    #
+    # Remove index file
+    #
+    def remove_index_file
+      Relaton::Index.find_or_create(:ogc, url: true, file: HitCollection::INDEX_FILE).remove_file
+    end
   end
 end
