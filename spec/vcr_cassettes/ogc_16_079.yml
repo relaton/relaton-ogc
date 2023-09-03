@@ -8,7 +8,7 @@ http_interactions:
       base64_string: ''
     headers:
       User-Agent:
-      - Faraday v2.7.4
+      - Faraday v2.7.10
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -39,29 +39,31 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - A20C:6B96:4E4D3F:5CB700:64762831
+      - C034:4B5C:7DADAE:969AD1:64F335EE
       Accept-Ranges:
       - bytes
       Date:
-      - Tue, 30 May 2023 16:45:37 GMT
+      - Sat, 02 Sep 2023 13:17:35 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-atl18446-ATL
+      - cache-iad-kcgs7200153-IAD
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1685465138.511527,VS0,VE83
+      - S1693660655.029350,VS0,VE78
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
       - "*"
+      Cross-Origin-Resource-Policy:
+      - cross-origin
       X-Fastly-Request-Id:
-      - c1a4877485412d672037998bd30b755b0bc56845
+      - f3d4a58dcab8b91ea0b7a1459b51fe794ca6e418
       Expires:
-      - Tue, 30 May 2023 16:50:37 GMT
+      - Sat, 02 Sep 2023 13:22:35 GMT
       Source-Age:
       - '0'
     body:
@@ -120,5 +122,5 @@ http_interactions:
         b2N0eXBlOiBpbXBsZW1lbnRhdGlvbgplZGl0b3JpYWxncm91cDoKICBjb21t
         aXR0ZWU6IHRlY2huaWNhbApleHQ6CiAgc2NoZW1hLXZlcnNpb246IHYxLjAu
         MQo=
-  recorded_at: Tue, 30 May 2023 16:45:37 GMT
-recorded_with: VCR 6.1.0
+  recorded_at: Sat, 02 Sep 2023 13:17:35 GMT
+recorded_with: VCR 6.2.0
