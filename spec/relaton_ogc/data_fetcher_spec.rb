@@ -47,7 +47,7 @@ RSpec.describe RelatonOgc::DataFetcher do
         subject.instance_variable_set :@dupids, ["1"]
         expect(subject).to receive(:fetch_doc).with(:hit).and_return true
         expect(subject).to receive(:etag=).with("etag")
-        expect { subject.fetch }.to output(/\[relaton-ogc\] WARNING Duplicated documents: 1/).to_stderr
+        expect { subject.fetch }.to output(/WARNING Duplicated documents: 1/).to_stderr
       end
     end
 

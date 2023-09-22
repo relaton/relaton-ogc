@@ -1,4 +1,6 @@
 RSpec.describe RelatonOgc do
+  before { RelatonOgc.instance_variable_set(:@configuration, nil) }
+
   it "has a version number" do
     expect(RelatonOgc::VERSION).not_to be nil
   end
@@ -58,7 +60,7 @@ RSpec.describe RelatonOgc do
           result = RelatonOgc::OgcBibliography.get "OGC 19-025r1", "2018", {}
           expect(result).to be_nil
         end.to output(
-          %r{WARNING: no match found online for OGC 19-025r1 year 2018},
+          %r{WARNING: no match found online for `OGC 19-025r1` year `2018`},
         ).to_stderr
       end
     end

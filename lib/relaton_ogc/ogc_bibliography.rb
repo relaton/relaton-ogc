@@ -23,7 +23,7 @@ module RelatonOgc
         result = bib_search_filter(code, year, opts) || (return nil)
         ret = bib_results_filter(result, year)
         if ret[:ret]
-          warn "[relaton-ogc] (\"#{code}\") found #{ret[:ret].docidentifier.first.id}"
+          Util.warn "(#{code}) found `#{ret[:ret].docidentifier.first.id}`"
           ret[:ret]
         else
           fetch_ref_err(code, year, ret[:years])
@@ -33,7 +33,7 @@ module RelatonOgc
       private
 
       def bib_search_filter(code, year, opts)
-        warn "[relaton-ogc] (\"#{code}\") fetching..."
+        Util.warn "(#{code}) fetching..."
         search(code, year, opts)
       end
 
@@ -67,12 +67,12 @@ module RelatonOgc
       # @param year [String]
       # @param missed_years [Array<Strig>]
       def fetch_ref_err(code, year, missed_years)
-        id = year ? "#{code} year #{year}" : code
-        warn "[relaton-ogc] WARNING: no match found online for #{id}. " \
-             "The code must be exactly like it is on the standards website."
+        id = year ? "`#{code}` year `#{year}`" : "#`{code}`"
+        Util.warn "WARNING: no match found online for #{id}. " \
+                  "The code must be exactly like it is on the standards website."
         unless missed_years.empty?
-          warn "[relaton-ogc] (There was no match for #{year}, though there " \
-               "were matches found for #{missed_years.join(', ')}.)"
+          Util.warn "There was no match for `#{year}`, though there " \
+                    "were matches found for `#{missed_years.join('`, `')}`."
         end
         nil
       end
