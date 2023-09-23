@@ -31,13 +31,24 @@ Or install it yourself as:
 
 == Usage
 
-=== Search for a standard using keywords
+=== Configuration
+
+Configuration is optional. The available option is `logger` which is a `Logger` instance. By default, the logger is `Logger.new($stderr)` with `Logger::WARN` level. To change the logger level, use `RelatonOgc.configure` block.
 
 [source,ruby]
 ----
 require 'relaton_ogc'
 => true
 
+RelatonOgc.configure do |config|
+  config.logger.level = Logger::DEBUG
+end
+----
+
+=== Search for a standard using keywords
+
+[source,ruby]
+----
 hits = RelatonOgc::OgcBibliography.search("OGC 19-025r1")
 => <RelatonOgc::HitCollection:0x007fcc8e085ba8 @ref=OGC 19-025r1 @fetched=true>
 
@@ -83,8 +94,8 @@ item.to_xml bibdata: true
 [source,ruby]
 ----
 RelatonOgc::OgcBibliography.get "OGC 19-025r1", "2019", {}
-[relaton-ogc] ("OGC 19-025r1") fetching...
-[relaton-ogc] ("OGC 19-025r1") found 19-025r1
+[relaton-ogc] (OGC 19-025r1) fetching...
+[relaton-ogc] (OGC 19-025r1) found `19-025r1`
 => #<RelatonOgc::OgcBibliographicItem:0x007fc322e9aba0
 ...
 ----
