@@ -94,8 +94,8 @@ item.to_xml bibdata: true
 [source,ruby]
 ----
 RelatonOgc::OgcBibliography.get "OGC 19-025r1", "2019", {}
-[relaton-ogc] (OGC 19-025r1) fetching...
-[relaton-ogc] (OGC 19-025r1) found `19-025r1`
+[relaton-ogc] (OGC 19-025r1) Fetching from Relaton repository ...
+[relaton-ogc] (OGC 19-025r1) Found: `19-025r1`
 => #<RelatonOgc::OgcBibliographicItem:0x007fc322e9aba0
 ...
 ----

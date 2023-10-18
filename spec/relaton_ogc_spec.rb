@@ -40,29 +40,31 @@ RSpec.describe RelatonOgc do
   end
 
   context "get code" do
-    it "with edition" do
-      VCR.use_cassette "ogc_19_025r1" do
+    it "with edition", vcr: "ogc_19_025r1" do
+      expect do
         result = RelatonOgc::OgcBibliography.get "OGC 19-025r1", nil, {}
         expect(result).to be_instance_of RelatonOgc::OgcBibliographicItem
-      end
+        expect(result.docidentifier.first.id).to eq "19-025r1"
+      end.to output(
+        include("[relaton-ogc] (OGC 19-025r1) Fetching from Relaton repository ...",
+                "[relaton-ogc] (OGC 19-025r1) Found: `19-025r1`"),
+      ).to_stderr
     end
 
-    it "with year" do
-      VCR.use_cassette "ogc_19_025r1" do
-        result = RelatonOgc::OgcBibliography.get "OGC 19-025r1", "2019", {}
-        expect(result).to be_instance_of RelatonOgc::OgcBibliographicItem
-      end
+    it "with year", vcr: "ogc_19_025r1" do
+      result = RelatonOgc::OgcBibliography.get "OGC 19-025r1", "2019", {}
+      expect(result).to be_instance_of RelatonOgc::OgcBibliographicItem
+      expect(result.docidentifier.first.id).to eq "19-025r1"
     end
 
-    it "with wrog year" do
-      VCR.use_cassette "ogc_19_025r1" do
-        expect do
-          result = RelatonOgc::OgcBibliography.get "OGC 19-025r1", "2018", {}
-          expect(result).to be_nil
-        end.to output(
-          %r{WARNING: no match found online for `OGC 19-025r1` year `2018`},
-        ).to_stderr
-      end
+    it "with wrog year", vcr: "ogc_19_025r1" do
+      expect do
+        result = RelatonOgc::OgcBibliography.get "OGC 19-025r1", "2018", {}
+        expect(result).to be_nil
+      end.to output(
+        include("[relaton-ogc] (OGC 19-025r1) Not found.",
+                "[relaton-ogc] There was no match for `2018`, though there were matches found for `2019`"),
+      ).to_stderr
     end
 
     it "ignore CC types" do

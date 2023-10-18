@@ -75,6 +75,7 @@ module RelatonOgc
       # @param url [String]
       # @return [Array>RelatonBib::TypedUri>]
       def fetch_link(url)
+        # type = url.end_with?("pdf") ? "pdf" : "src"
         [RelatonBib::TypedUri.new(type: "obp", content: url)]
       end
 

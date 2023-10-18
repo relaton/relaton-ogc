@@ -20,10 +20,11 @@ module RelatonOgc
       #
       # @return [String] Relaton XML serialisation of reference
       def get(code, year = nil, opts = {})
+        # id = year ? "`#{code}` year `#{year}`" : "#`{code}`"
         result = bib_search_filter(code, year, opts) || (return nil)
         ret = bib_results_filter(result, year)
         if ret[:ret]
-          Util.warn "(#{code}) found `#{ret[:ret].docidentifier.first.id}`"
+          Util.warn "(#{code}) Found: `#{ret[:ret].docidentifier.first.id}`"
           ret[:ret]
         else
           fetch_ref_err(code, year, ret[:years])
@@ -33,7 +34,7 @@ module RelatonOgc
       private
 
       def bib_search_filter(code, year, opts)
-        Util.warn "(#{code}) fetching..."
+        Util.warn "(#{code}) Fetching from Relaton repository ..."
         search(code, year, opts)
       end
 
@@ -67,9 +68,7 @@ module RelatonOgc
       # @param year [String]
       # @param missed_years [Array<Strig>]
       def fetch_ref_err(code, year, missed_years)
-        id = year ? "`#{code}` year `#{year}`" : "#`{code}`"
-        Util.warn "WARNING: no match found online for #{id}. " \
-                  "The code must be exactly like it is on the standards website."
+        Util.warn "(#{code}) Not found."
         unless missed_years.empty?
           Util.warn "There was no match for `#{year}`, though there " \
                     "were matches found for `#{missed_years.join('`, `')}`."

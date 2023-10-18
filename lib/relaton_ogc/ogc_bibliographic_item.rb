@@ -16,8 +16,7 @@ module RelatonOgc
 
     def initialize(**args)
       if args[:subdoctype] && !SUBTYPES.include?(args[:subdoctype])
-        warn "[relaton-ogc] WARNING: invalid document "\
-             "subtype: #{args[:subdoctype]}"
+        Util.warn "WARNING: Invalid document subtype: `#{args[:subdoctype]}`"
       end
 
       # @docsubtype = args.delete :docsubtype

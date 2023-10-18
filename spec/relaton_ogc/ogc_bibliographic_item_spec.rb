@@ -2,7 +2,7 @@ RSpec.describe RelatonOgc::OgcBibliographicItem do
   it "warn invalid document subtype" do
     expect do
       RelatonOgc::OgcBibliographicItem.new subdoctype: "invalid-subtype"
-    end.to output(/invalid document subtyp/).to_stderr
+    end.to output(/\[relaton-ogc\] WARNING: Invalid document subtype: `invalid-subtype`/).to_stderr
   end
 
   it "returns AciiBib" do
