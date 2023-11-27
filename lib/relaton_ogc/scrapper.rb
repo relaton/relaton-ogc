@@ -41,7 +41,7 @@ module RelatonOgc
           title: fetch_title(hit["title"]),
           docid: fetch_docid(hit["identifier"]),
           link: fetch_link(hit["URL"]),
-          doctype: type[:type],
+          doctype: fetch_doctype(type[:type]),
           subdoctype: type[:subtype],
           docstatus: fetch_status(type[:stage]),
           edition: fetch_edition(hit["identifier"]),
@@ -77,6 +77,10 @@ module RelatonOgc
       def fetch_link(url)
         # type = url.end_with?("pdf") ? "pdf" : "src"
         [RelatonBib::TypedUri.new(type: "obp", content: url)]
+      end
+
+      def fetch_doctype(type)
+        DocumentType.new(type: type)
       end
 
       # @param type [String]

@@ -1,13 +1,5 @@
 module RelatonOgc
   class OgcBibliographicItem < RelatonBib::BibliographicItem
-    TYPES = %w[
-      abstract-specification-topic best-practice
-      change-request-supporting-document
-      community-practice community-standard discussion-paper engineering-report
-      other policy reference-model release-notes standard user-guide white-paper
-      test-suite
-    ].freeze
-
     SUBTYPES = %w[
       conceptual-model conceptual-model-and-encoding
       conceptual-model-and-implementation encoding extension implementation
@@ -56,7 +48,7 @@ module RelatonOgc
     def to_xml(**opts) # rubocop:disable Metrics/AbcSize
       super(**opts) do |b|
         ext = b.ext do
-          b.doctype doctype if doctype
+          doctype&.to_xml b
           b.subdoctype subdoctype if subdoctype
           editorialgroup&.to_xml b
           ics.each { |i| i.to_xml b }

@@ -13,6 +13,7 @@ describe RelatonOgc::Scrapper do
     expect(described_class).to receive(:fetch_editorialgroup).and_return(:editorialgroup)
     expect(described_class).to receive(:fetch_edition).with(:identifier).and_return(:edition)
     expect(described_class).to receive(:fetch_status).with(:draft).and_return(:status)
+    expect(described_class).to receive(:fetch_doctype).with(:doctype).and_return(:doctype)
     expect(RelatonOgc::OgcBibliographicItem).to receive(:new).with(
       type: "standard", title: "Title", docid: :docid, link: :link, doctype: :doctype,
       subdoctype: :subdoctype, docstatus: :status, edition: :edition, abstract: :abstract,
@@ -56,6 +57,12 @@ describe RelatonOgc::Scrapper do
   it "fetch_type" do
     type = described_class.send :fetch_type, "D-CAN"
     expect(type).to eq type: "standard", subtype: "general", stage: "draft"
+  end
+
+  it "fetch_doctype" do
+    doctype = described_class.send :fetch_doctype, "standard"
+    expect(doctype).to be_instance_of RelatonOgc::DocumentType
+    expect(doctype.type).to eq "standard"
   end
 
   context "fetch_status" do

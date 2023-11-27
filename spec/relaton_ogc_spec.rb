@@ -84,7 +84,7 @@ RSpec.describe RelatonOgc do
     it "returns last date" do
       VCR.use_cassette "ogc_16_079" do
         result = RelatonOgc::OgcBibliography.get "16-079", nil, {}
-        expect(result.doctype).to eq "standard"
+        expect(result.doctype.type).to eq "standard"
         expect(result.subdoctype).to eq "implementation"
       end
     end
@@ -99,7 +99,7 @@ RSpec.describe RelatonOgc do
     it "get document with unknown type" do
       VCR.use_cassette "ogc_09_048r5" do
         result = RelatonOgc::OgcBibliography.get "OGC 09-048r5"
-        expect(result.doctype).to eq "other"
+        expect(result.doctype.type).to eq "other"
       end
     end
 

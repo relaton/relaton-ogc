@@ -8,7 +8,7 @@ http_interactions:
       base64_string: ''
     headers:
       User-Agent:
-      - Faraday v2.7.11
+      - Faraday v2.7.12
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -29,7 +29,7 @@ http_interactions:
       Content-Type:
       - text/plain; charset=utf-8
       Etag:
-      - W/"104f79a66434d750cc535a486b247df2c696e31944d7495f643fad3f795cc4a2"
+      - W/"4c5e82c8b9928e69b1291412b87407496359f5a715be5a1e33318920a7052204"
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -39,21 +39,21 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Github-Request-Id:
-      - 73BC:5850:C652D:F58ED:652F4DFC
+      - 1B90:1C3B:92139A:B087C0:655F915E
       Accept-Ranges:
       - bytes
       Date:
-      - Wed, 18 Oct 2023 03:16:13 GMT
+      - Thu, 23 Nov 2023 17:52:31 GMT
       Via:
       - 1.1 varnish
       X-Served-By:
-      - cache-atl18485-ATL
+      - cache-pdk-kpdk1780062-PDK
       X-Cache:
       - MISS
       X-Cache-Hits:
       - '0'
       X-Timer:
-      - S1697598974.699218,VS0,VE87
+      - S1700761951.432134,VS0,VE89
       Vary:
       - Authorization,Accept-Encoding,Origin
       Access-Control-Allow-Origin:
@@ -61,15 +61,15 @@ http_interactions:
       Cross-Origin-Resource-Policy:
       - cross-origin
       X-Fastly-Request-Id:
-      - 0f78d31f10dc3c39502db8e2319459e300c8def4
+      - 359e043cd30c6a4b2362da985de79d639d65b519
       Expires:
-      - Wed, 18 Oct 2023 03:21:13 GMT
+      - Thu, 23 Nov 2023 17:57:31 GMT
       Source-Age:
       - '0'
     body:
       encoding: ASCII-8BIT
       base64_string: |
-        LS0tCnNjaGVtYS12ZXJzaW9uOiB2MS4yLjQKaWQ6IDEyLTEyOHIxNAp0aXRs
+        LS0tCnNjaGVtYS12ZXJzaW9uOiB2MS4yLjUKaWQ6IDEyLTEyOHIxNAp0aXRs
         ZToKLSBjb250ZW50OiBPR0PCriBHZW9QYWNrYWdlIEVuY29kaW5nIFN0YW5k
         YXJkCiAgbGFuZ3VhZ2U6CiAgLSBlbgogIHNjcmlwdDoKICAtIExhdG4KICBm
         b3JtYXQ6IHRleHQvcGxhaW4KICB0eXBlOiB0aXRsZS1tYWluCi0gY29udGVu
@@ -109,5 +109,5 @@ http_interactions:
         ZGFyZApzdWJkb2N0eXBlOiBpbXBsZW1lbnRhdGlvbgplZGl0b3JpYWxncm91
         cDoKICBjb21taXR0ZWU6IHRlY2huaWNhbApleHQ6CiAgc2NoZW1hLXZlcnNp
         b246IHYxLjAuMQo=
-  recorded_at: Wed, 18 Oct 2023 03:16:13 GMT
+  recorded_at: Thu, 23 Nov 2023 17:52:31 GMT
 recorded_with: VCR 6.2.0
