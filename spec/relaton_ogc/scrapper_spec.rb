@@ -1,12 +1,12 @@
 describe RelatonOgc::Scrapper do
   it "parse_page" do
     hit = { "type" => :type, "title" => :title, "identifier" => :identifier,
-            "URL" => :url, "date" => :date, "description" => :description }
+            "date" => :date, "description" => :description }
     expect(described_class).to receive(:fetch_type).with(:type)
       .and_return(type: :doctype, subtype: :subdoctype, stage: :draft)
     expect(described_class).to receive(:fetch_title).with(:title).and_return("Title")
     expect(described_class).to receive(:fetch_docid).with(:identifier).and_return(:docid)
-    expect(described_class).to receive(:fetch_link).with(:url).and_return(:link)
+    expect(described_class).to receive(:fetch_link).with(hit).and_return(:link)
     expect(described_class).to receive(:fetch_date).with(:date).and_return(:date)
     expect(described_class).to receive(:fetch_abstract).with(:description).and_return(:abstract)
     expect(described_class).to receive(:fetch_contributor).with(hit).and_return(:contributor)
@@ -46,12 +46,39 @@ describe RelatonOgc::Scrapper do
     expect(doid.first.primary).to be true
   end
 
-  it "fetch_link" do
-    link = described_class.send :fetch_link, "url"
-    expect(link).to be_instance_of Array
-    expect(link.first).to be_instance_of RelatonBib::TypedUri
-    expect(link.first.type).to eq "obp"
-    expect(link.first.content.to_s).to eq "url"
+  context "fetch_link" do
+    it "URI and URL" do
+      hit = { "URI" => "uri", "URL" => "url" }
+      link = described_class.send :fetch_link, hit
+      expect(link).to be_instance_of Array
+      expect(link.size).to eq 2
+      expect(link.first).to be_instance_of RelatonBib::TypedUri
+      expect(link.first.type).to eq "src"
+      expect(link.first.content.to_s).to eq "uri"
+      expect(link.last).to be_instance_of RelatonBib::TypedUri
+      expect(link.last.type).to eq "obp"
+      expect(link.last.content.to_s).to eq "url"
+    end
+
+    it "URI only" do
+      hit = { "URI" => "uri" }
+      link = described_class.send :fetch_link, hit
+      expect(link).to be_instance_of Array
+      expect(link.size).to eq 1
+      expect(link.first).to be_instance_of RelatonBib::TypedUri
+      expect(link.first.type).to eq "src"
+      expect(link.first.content.to_s).to eq "uri"
+    end
+
+    it "URL only" do
+      hit = { "URL" => "url.pdf" }
+      link = described_class.send :fetch_link, hit
+      expect(link).to be_instance_of Array
+      expect(link.size).to eq 1
+      expect(link.first).to be_instance_of RelatonBib::TypedUri
+      expect(link.first.type).to eq "pdf"
+      expect(link.first.content.to_s).to eq "url.pdf"
+    end
   end
 
   it "fetch_type" do

@@ -40,7 +40,7 @@ module RelatonOgc
           type: "standard",
           title: fetch_title(hit["title"]),
           docid: fetch_docid(hit["identifier"]),
-          link: fetch_link(hit["URL"]),
+          link: fetch_link(hit),
           doctype: fetch_doctype(type[:type]),
           subdoctype: type[:subtype],
           docstatus: fetch_status(type[:stage]),
@@ -72,11 +72,15 @@ module RelatonOgc
         [RelatonBib::DocumentIdentifier.new(id: identifier, type: "OGC", primary: true)]
       end
 
-      # @param url [String]
+      # @param hit [Hash]
       # @return [Array>RelatonBib::TypedUri>]
-      def fetch_link(url)
-        # type = url.end_with?("pdf") ? "pdf" : "src"
-        [RelatonBib::TypedUri.new(type: "obp", content: url)]
+      def fetch_link(hit)
+        link = []
+        link << RelatonBib::TypedUri.new(type: "src", content: hit["URI"]) if hit["URI"]
+        return link unless hit["URL"]
+
+        type = hit["URL"].end_with?("pdf") ? "pdf" : "obp"
+        link  << RelatonBib::TypedUri.new(type: type, content: hit["URL"])
       end
 
       def fetch_doctype(type)
