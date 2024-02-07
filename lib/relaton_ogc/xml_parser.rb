@@ -12,6 +12,10 @@ module RelatonOgc
         OgcBibliographicItem.new(**item_hash)
       end
 
+      def create_doctype(type)
+        DocumentType.new type: type.text, abbreviation: type[:abbreviation]
+      end
+
       # Override RelatonIsoBib::XMLParser.item_data method.
       # @param item [Nokogiri::XML::Element]
       # @returtn [Hash]

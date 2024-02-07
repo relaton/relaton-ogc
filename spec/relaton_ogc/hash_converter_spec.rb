@@ -5,4 +5,12 @@ RSpec.describe RelatonOgc::HashConverter do
     item = RelatonOgc::OgcBibliographicItem.from_hash hash
     expect(item.to_hash).to eq hash
   end
+
+  it "create doctype" do
+    hash = { type: "standard", abbreviation: "ST" }
+    doctype = RelatonOgc::HashConverter.send(:create_doctype, **hash)
+    expect(doctype).to be_instance_of RelatonOgc::DocumentType
+    expect(doctype.type).to eq "standard"
+    expect(doctype.abbreviation).to eq "ST"
+  end
 end

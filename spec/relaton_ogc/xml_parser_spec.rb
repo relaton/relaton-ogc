@@ -17,4 +17,14 @@ RSpec.describe RelatonOgc::XMLParser do
       .to_stderr
     expect(item).to be_nil
   end
+
+  it "creates doctype" do
+    xml = Nokogiri::XML(<<~XML).at("/doctype")
+      <doctype abbreviation="ST">standard</doctype>
+    XML
+    doctype = RelatonOgc::XMLParser.send :create_doctype, xml
+    expect(doctype).to be_instance_of RelatonOgc::DocumentType
+    expect(doctype.type).to eq "standard"
+    expect(doctype.abbreviation).to eq "ST"
+  end
 end
