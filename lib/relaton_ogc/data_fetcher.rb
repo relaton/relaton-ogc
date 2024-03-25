@@ -72,7 +72,7 @@ module RelatonOgc
       get_data do |etag, json|
         no_errors = true
         json.each { |_, hit| fetch_doc(hit) || no_errors = false }
-        warn "WARNING Duplicated documents: #{@dupids.to_a.join(', ')}" if @dupids.any?
+        Util.warn "Duplicated documents: #{@dupids.to_a.join(', ')}" if @dupids.any?
         self.etag = etag if no_errors
         index.save
       end
@@ -85,9 +85,8 @@ module RelatonOgc
       write_document bib
       true
     rescue StandardError => e
-      warn "Fetching document: #{hit['identifier']}"
-      warn "#{e.class} #{e.message}"
-      warn e.backtrace
+      Util.error "Fetching document: #{hit['identifier']}\n" \
+      "#{e.class} #{e.message}\n#{e.backtrace}"
       false
     end
 

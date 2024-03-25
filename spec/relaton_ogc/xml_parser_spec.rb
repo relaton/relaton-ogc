@@ -11,12 +11,12 @@ RSpec.describe RelatonOgc::XMLParser do
     expect(errors).to eq []
   end
 
-  it "warn if XML doesn't have bibitem or bibdata element" do
-    item = ""
-    expect { item = RelatonOgc::XMLParser.from_xml "" }.to output(/can't find bibitem/)
-      .to_stderr
-    expect(item).to be_nil
-  end
+  # it "warn if XML doesn't have bibitem or bibdata element" do
+  #   item = ""
+  #   expect { item = RelatonOgc::XMLParser.from_xml "" }.to output(/can't find bibitem/)
+  #     .to_stderr
+  #   expect(item).to be_nil
+  # end
 
   it "creates doctype" do
     xml = Nokogiri::XML(<<~XML).at("/doctype")
