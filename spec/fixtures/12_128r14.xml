@@ -1,8 +1,8 @@
 <bibdata type="standard" schema-version="v1.2.8">
-  <fetched>2023-12-07</fetched>
+  <fetched>2024-05-18</fetched>
   <title type="title-main" format="text/plain" language="en" script="Latn">OGC® GeoPackage Encoding Standard</title>
   <title type="main" format="text/plain" language="en" script="Latn">OGC® GeoPackage Encoding Standard</title>
-  <uri type="src">http://www.opengis.net/doc/IS/geopackage/1.2</uri>
+  <uri type="src">http://www.opengis.net/doc/IS/geopackage/1.2.0</uri>
   <uri type="obp">https://portal.ogc.org/files/?artifact_id=74225</uri>
   <docidentifier type="OGC" primary="true">12-128r14</docidentifier>
   <date type="published">
