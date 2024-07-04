@@ -1,7 +1,6 @@
 require "relaton/index"
 require "relaton_iso_bib"
 require "relaton_ogc/version"
-require "relaton_ogc/config"
 require "relaton_ogc/util"
 require "relaton_ogc/document_type"
 require "relaton_ogc/ogc_bibliographic_item"
