@@ -38,9 +38,7 @@ module RelatonOgc
         committe = eg&.at("committee")&.text
         sc = iso_subgroup eg&.at("subcommittee")
         wg = iso_subgroup eg&.at("workgroup")
-        EditorialGroup.new(
-          committee: committe, subcommittee: sc, workgroup: wg,
-        )
+        EditorialGroup.new(committee: committe, subcommittee: sc, workgroup: wg)
       end
     end
   end

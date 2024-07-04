@@ -46,9 +46,9 @@ RSpec.describe RelatonOgc do
         expect(result).to be_instance_of RelatonOgc::OgcBibliographicItem
         expect(result.docidentifier.first.id).to eq "19-025r1"
       end.to output(
-        include("[relaton-ogc] (OGC 19-025r1) Fetching from Relaton repository ...",
-                "[relaton-ogc] (OGC 19-025r1) Found: `19-025r1`"),
-      ).to_stderr
+        include("[relaton-ogc] INFO: (OGC 19-025r1) Fetching from Relaton repository ...",
+                "[relaton-ogc] INFO: (OGC 19-025r1) Found: `19-025r1`"),
+      ).to_stderr_from_any_process
     end
 
     it "with year", vcr: "ogc_19_025r1" do
@@ -62,9 +62,9 @@ RSpec.describe RelatonOgc do
         result = RelatonOgc::OgcBibliography.get "OGC 19-025r1", "2018", {}
         expect(result).to be_nil
       end.to output(
-        include("[relaton-ogc] (OGC 19-025r1) Not found.",
-                "[relaton-ogc] There was no match for `2018`, though there were matches found for `2019`"),
-      ).to_stderr
+        include("[relaton-ogc] INFO: (OGC 19-025r1) Not found.",
+                "[relaton-ogc] INFO: (OGC 19-025r1) There was no match for `2018`, though there were matches found for `2019`"),
+      ).to_stderr_from_any_process
     end
 
     it "ignore CC types" do

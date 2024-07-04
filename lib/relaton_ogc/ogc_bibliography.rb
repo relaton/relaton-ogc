@@ -24,7 +24,7 @@ module RelatonOgc
         result = bib_search_filter(code, year, opts) || (return nil)
         ret = bib_results_filter(result, year)
         if ret[:ret]
-          Util.warn "(#{code}) Found: `#{ret[:ret].docidentifier.first.id}`"
+          Util.info "Found: `#{ret[:ret].docidentifier.first.id}`", key: code
           ret[:ret]
         else
           fetch_ref_err(code, year, ret[:years])
@@ -34,7 +34,7 @@ module RelatonOgc
       private
 
       def bib_search_filter(code, year, opts)
-        Util.warn "(#{code}) Fetching from Relaton repository ..."
+        Util.info "Fetching from Relaton repository ...", key: code
         search(code, year, opts)
       end
 
@@ -68,10 +68,10 @@ module RelatonOgc
       # @param year [String]
       # @param missed_years [Array<Strig>]
       def fetch_ref_err(code, year, missed_years)
-        Util.warn "(#{code}) Not found."
+        Util.info "Not found.", key: code
         unless missed_years.empty?
-          Util.warn "There was no match for `#{year}`, though there " \
-                    "were matches found for `#{missed_years.join('`, `')}`."
+          Util.info "There was no match for `#{year}`, though there " \
+                    "were matches found for `#{missed_years.join('`, `')}`.", key: code
         end
         nil
       end
