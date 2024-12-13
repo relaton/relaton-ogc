@@ -1,5 +1,10 @@
 RSpec.describe RelatonOgc do
-  before { RelatonOgc.instance_variable_set(:@configuration, nil) }
+  before do
+    RelatonOgc.instance_variable_set(:@configuration, nil)
+    # Force to download index file
+    allow_any_instance_of(Relaton::Index::Type).to receive(:actual?).and_return(false)
+    allow_any_instance_of(Relaton::Index::FileIO).to receive(:check_file).and_return(nil)
+  end
 
   it "has a version number" do
     expect(RelatonOgc::VERSION).not_to be nil
