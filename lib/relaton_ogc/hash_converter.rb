@@ -7,7 +7,7 @@ module RelatonOgc
 
     # @param ret [Hash]
     def editorialgroup_hash_to_bib(ret)
-      eg = ret[:editorialgroup]
+      eg = ret.dig(:ext, :editorialgroup) || ret[:editorialgroup] #@TODO: remove ret[:editorialgroup] after all gem will be updated
       return unless eg
 
       ret[:editorialgroup] = EditorialGroup.new(

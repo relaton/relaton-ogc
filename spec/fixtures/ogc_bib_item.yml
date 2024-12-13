@@ -67,16 +67,16 @@ abstract:
   script:
   - Latn
   format: text/plain
-editorialgroup:
-  committee: technical
-  subcommittee:
-    name: Subcommittee
-    type: OGC
-    number: 11
-  workgroup:
-    name: Working
-    type: WG
-    number: 22
-subdoctype: general
 ext:
   schema-version: v1.0.1
+  subdoctype: general
+  editorialgroup:
+    committee: technical
+    subcommittee:
+      name: Subcommittee
+      type: OGC
+      number: 11
+    workgroup:
+      name: Working
+      type: WG
+      number: 22
