@@ -1,0 +1,79 @@
+---
+id: OGC19025r1
+schema_version: v1.2.9
+fetched: '2019-11-01'
+title:
+- type: title-main
+  content: Development of Spatial Data Infrastructures for Marine Data Management
+  language: en
+  script: Latn
+- type: main
+  content: Development of Spatial Data Infrastructures for Marine Data Management
+  language: en
+  script: Latn
+source:
+- type: obp
+  content: https://portal.opengeospatial.org/files/?artifact_id=88037
+type: standard
+docidentifier:
+- content: 19-025r1
+  type: OGC
+  primary: true
+date:
+- type: published
+  at: '2019-01-01'
+contributor:
+- person:
+    name:
+      completename:
+        content: Robert Thomas
+  role:
+  - type: author
+- person:
+    name:
+      completename:
+        content: Terry Idol
+  role:
+  - type: author
+- organization:
+    name:
+    - content: Open Geospatial Consortium
+  role:
+  - type: publisher
+edition:
+  content: '1'
+language:
+- en
+script:
+- Latn
+abstract:
+- content: "This engineering report presents the results of a concept development
+    study on a\r\nMarine Spatial Data Infrastructure (SDI), sponsored by the National
+    Geospatial-\r\nIntelligence Agency (NGA) - Maritime Safety Office (MSO), on behalf
+    of the\r\nInternational Hydrographic Organization (IHO) and the IHO MSDI Working
+    Group\r\n(MSDIWG), and executed by the Open Geospatial Consortium (OGC). The goal
+    of\r\nthis study was to demonstrate to stakeholders the diversity, richness and
+    value of a\r\nMarine SDI – specifically data, analysis, interoperability and associated
+    IT services\r\n- including web services - in addressing needs of the marine domain."
+  language: en
+  script: Latn
+ext:
+  schema_version: v1.0.1
+  doctype:
+    abbreviation: ER
+    content: engineering-report
+  subdoctype: general
+  flavor: ogc
+  editorialgroup:
+    committee: technical
+    subcommittee:
+      type: OGC
+      number: 11
+      content: Subcommittee
+    workgroup:
+      type: WG
+      number: 22
+      content: Working
+  ics:
+  - code: "35"
+    text: Information technology. Office machines
