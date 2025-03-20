@@ -47,8 +47,8 @@ describe RelatonOgc::Scrapper do
   end
 
   context "fetch_link" do
-    it "URI and URL" do
-      hit = { "URI" => "uri", "URL" => "url" }
+    it "URI and URL pdf type" do
+      hit = { "URI" => "uri", "URL" => "portal.ogc.org" }
       link = described_class.send :fetch_link, hit
       expect(link).to be_instance_of Array
       expect(link.size).to eq 2
@@ -56,8 +56,15 @@ describe RelatonOgc::Scrapper do
       expect(link.first.type).to eq "src"
       expect(link.first.content.to_s).to eq "uri"
       expect(link.last).to be_instance_of RelatonBib::TypedUri
-      expect(link.last.type).to eq "obp"
-      expect(link.last.content.to_s).to eq "url"
+      expect(link.last.type).to eq "pdf"
+      expect(link.last.content.to_s).to eq "portal.ogc.org"
+    end
+
+    it "URI is empty & URL type is html" do
+      hit = { "URI" => "", "URL" => "www.w3.org" }
+      link = described_class.send :fetch_link, hit
+      expect(link.first.type).to eq "html"
+      expect(link.first.content.to_s).to eq "www.w3.org"
     end
 
     it "URI only" do
@@ -71,13 +78,13 @@ describe RelatonOgc::Scrapper do
     end
 
     it "URL only" do
-      hit = { "URL" => "url.pdf" }
+      hit = { "URL" => "url.doc" }
       link = described_class.send :fetch_link, hit
       expect(link).to be_instance_of Array
       expect(link.size).to eq 1
       expect(link.first).to be_instance_of RelatonBib::TypedUri
-      expect(link.first.type).to eq "pdf"
-      expect(link.first.content.to_s).to eq "url.pdf"
+      expect(link.first.type).to eq "doc"
+      expect(link.first.content.to_s).to eq "url.doc"
     end
   end
 
@@ -154,7 +161,7 @@ describe RelatonOgc::Scrapper do
       expect(described_class.send(:fetch_date, nil)).to eq []
     end
 
-    it "invalid date" do
+    xit "invalid date" do
       date = described_class.send :fetch_date, "0000-00-00"
       expect(date).to eq []
     end

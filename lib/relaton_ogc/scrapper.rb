@@ -76,11 +76,23 @@ module RelatonOgc
       # @return [Array>RelatonBib::TypedUri>]
       def fetch_link(hit)
         link = []
-        link << RelatonBib::TypedUri.new(type: "src", content: hit["URI"]) if hit["URI"]
-        return link unless hit["URL"]
+        uri = hit["URI"].to_s.strip
+        link << RelatonBib::TypedUri.new(type: "src", content: uri) unless uri.empty?
+        return link unless hit["URL"] && !hit["URL"].strip.empty?
 
-        type = hit["URL"].end_with?("pdf") ? "pdf" : "obp"
-        link  << RelatonBib::TypedUri.new(type: type, content: hit["URL"])
+        if ext = hit["URL"].match(/(?<=\.)(?<ext>pdf|html|doc)$/)
+          type = ext[:ext]
+        else
+          case hit["URL"]
+          when /portal\.(ogc|opengeospatial)\.org/, /usgif\.org/
+            type = "pdf"
+          when /www\.(w3|geopackage)\.org/, /docs\.ogc\.org/
+            type = "html"
+          else
+            type = "html"
+          end
+        end
+        link  << RelatonBib::TypedUri.new(type: type, content: hit["URL"].strip)
       end
 
       def fetch_doctype(type)
