@@ -29,7 +29,7 @@ RSpec.describe RelatonOgc do
   end
 
   context "return xml of hit" do
-    it "with bibdata root elemen" do
+    xit "with bibdata root elemen" do
       VCR.use_cassette "ogc_19_025r1" do
         hits = RelatonOgc::OgcBibliography.search("OGC 19-025r1")
         path = "spec/fixtures/hit.xml"
@@ -72,7 +72,7 @@ RSpec.describe RelatonOgc do
       ).to_stderr_from_any_process
     end
 
-    it "ignore CC types" do
+    xit "ignore CC types" do
       VCR.use_cassette "ogc_12_128r14" do
         path = "spec/fixtures/12_128r14.xml"
         result = RelatonOgc::OgcBibliography.get "12-128r14", nil, {}

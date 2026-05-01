@@ -86,6 +86,13 @@ describe RelatonOgc::Scrapper do
       expect(link.first.type).to eq "doc"
       expect(link.first.content.to_s).to eq "url.doc"
     end
+
+    it "docs.ogc.org URL ending in /pdf is typed as pdf, content preserved" do
+      hit = { "URL" => "https://docs.ogc.org/per/19-025r1/19-025r1/pdf" }
+      link = described_class.send :fetch_link, hit
+      expect(link.first.type).to eq "pdf"
+      expect(link.first.content.to_s).to eq "https://docs.ogc.org/per/19-025r1/19-025r1/pdf"
+    end
   end
 
   it "fetch_type" do
