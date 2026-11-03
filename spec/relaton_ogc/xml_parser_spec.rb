@@ -5,7 +5,7 @@ RSpec.describe RelatonOgc::XMLParser do
     path = "spec/fixtures/12_128r14.xml"
     xml = File.read path, encoding: "UTF-8"
     item = RelatonOgc::XMLParser.from_xml xml
-    expect(item.to_xml(bibdata: true)).to be_equivalent_to xml
+    expect(item.to_xml(bibdata: true)).to be_xml_equivalent_to xml
     schema = Jing.new "grammars/relaton-ogc-compile.rng"
     errors = schema.validate path
     expect(errors).to eq []
