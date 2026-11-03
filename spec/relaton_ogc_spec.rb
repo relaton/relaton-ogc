@@ -35,7 +35,7 @@ RSpec.describe RelatonOgc do
         path = "spec/fixtures/hit.xml"
         xml = hits.first.to_xml bibdata: true
         File.write path, xml, encoding: "UTF-8" unless File.exist? path
-        expect(xml).to be_equivalent_to File.open(path, "r:UTF-8", &:read)
+        expect(xml).to be_xml_equivalent_to File.open(path, "r:UTF-8", &:read)
           .gsub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         schema = Jing.new "grammars/relaton-ogc-compile.rng"
         errors = schema.validate path
@@ -78,7 +78,7 @@ RSpec.describe RelatonOgc do
         result = RelatonOgc::OgcBibliography.get "12-128r14", nil, {}
         xml = result.to_xml bibdata: true
         File.write path, xml, encoding: "UTF-8" unless File.exist? path
-        expect(xml).to be_equivalent_to File.read(path, encoding: "UTF-8")
+        expect(xml).to be_xml_equivalent_to File.read(path, encoding: "UTF-8")
           .sub(/(?<=<fetched>)\d{4}-\d{2}-\d{2}/, Date.today.to_s)
         schema = Jing.new "grammars/relaton-ogc-compile.rng"
         errors = schema.validate path
